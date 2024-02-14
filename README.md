@@ -9,7 +9,7 @@ Personal Cv website with angular and firebase
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=CVwebsite&theme=buefy" />
 </a>
 <br>
-User analytics service with golang/postgres and frontdone with sveltekit
+User analytics service with golang/postgres and frontend done with sveltekit
 <br>
 <a href="https://github.com/NikoJunttila/userAnalytics">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=userAnalytics&theme=buefy" />
