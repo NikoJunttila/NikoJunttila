@@ -1,7 +1,7 @@
 <p align="center"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExemRkcGsxNjY1cnM4N3RtZjJ4MTVzYzN1eDd4eGdsbG8wazB1ZG85ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SScTyz7dQ0Gf7c9dZ9/giphy.gif" width="100"/></p>
 <p align="center"><img src="https://komarev.com/ghpvc/?username=NikoJunttila&style=flat-square&color=blue" alt=""></p>
 
-###About Me :
+### About Me :
 
 I am a Full Stack Developer <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> from Finland.<br>
 Mostly working with Sveltekit and golang at the moment but experience from other stuff also.
