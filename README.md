@@ -4,7 +4,8 @@
 ### About Me :
 
 I am a Full Stack Developer <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> from Finland.<br>
-Mostly working with Sveltekit and golang at the moment but experience from other stuff also.
+Mostly working with Sveltekit and golang at the moment but experience from other stuff also. <img align="right" alt="DiscordGo logo" src="/imgs/discordgo.svg" width="200">
+
 
 
 [![Niko's GitHub stats](https://github-readme-stats.vercel.app/api?username=NikoJunttila&bg_color=230deg,#690404,#6f0674)](https://github.com/anuraghazra/github-readme-stats)
