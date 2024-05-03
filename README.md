@@ -4,7 +4,7 @@
 ### About Me :
 
 I am a Full Stack Developer <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> from Finland.<br>
-Mostly working with Sveltekit and golang at the moment but experience from other stuff also. <img align="right" alt="DiscordGo logo" src="/imgs/discordgo.svg" width="200">
+Mostly working with Sveltekit and golang at the moment but experience from other projects like Python, React and Angular. <img align="right" alt="DiscordGo logo" src="/imgs/discordgo.svg" width="200">
 
 
 
@@ -16,6 +16,10 @@ Mostly working with Sveltekit and golang at the moment but experience from other
 <a href="https://github.com/NikoJunttila/CVwebsite">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=CVwebsite&theme=buefy" />
 </a>
+<a href="https://github.com/NikoJunttila/TPX-discordbot">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=TPX-discordbot&theme=buefy" />
+</a>
+<br>
 <a href="https://github.com/NikoJunttila/userAnalytics">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=userAnalytics&theme=buefy" />
 </a>
