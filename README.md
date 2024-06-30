@@ -25,9 +25,6 @@ Open for any project you might need help with my web cv has all my contacts <a h
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=userAnalytics&theme=buefy" />
 </a>
 <br>
-<a href="https://github.com/NikoJunttila/hkl-svelte">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=hkl-svelte&theme=buefy" />
-</a>
 <a href="https://github.com/NikoJunttila/headerCheck">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=headerCheck&theme=buefy" />
 </a>
