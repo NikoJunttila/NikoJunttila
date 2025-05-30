@@ -19,7 +19,7 @@
 **Full Stack Developer** <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> passionate about creating efficient and scalable web applications.
 
 - 🔭 Currently working with **SvelteKit** and **Golang**
-- 🌱 Experience with **Python**, **React**, **Angular**, and more
+- 🌱 Experience with **js/ts**,**Vue**, **React**, **Angular**,**Python** ,and more
 - 💼 Open for collaboration and exciting projects
 - 📫 Find all my contacts on my [web CV](https://junttila.dev/cv)
 - 🇫🇮 Based in Finland
@@ -49,7 +49,9 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
 ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-257bd6?style=for-the-badge&logo=docker&logoColor=white)
 
 </div>
 
