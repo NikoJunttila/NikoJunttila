@@ -81,6 +81,9 @@
   <a href="https://github.com/NikoJunttila/Calendar-app">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=Calendar-app&theme=radical&bg_color=0d1117&title_color=ff6b6b&text_color=c9d1d9&border_color=30363d" />
   </a>
+    <a href="https://github.com/NikoJunttila/sveltekit-vendure-storefront">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=sveltekit-vendure-storefront&theme=radical&bg_color=0d1117&title_color=ff6b6b&text_color=c9d1d9&border_color=30363d" />
+  </a>
 </div>
 
 ---
