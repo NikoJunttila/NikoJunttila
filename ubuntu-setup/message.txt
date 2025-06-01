@@ -23,7 +23,8 @@ sudo apt install cmatrix #matrix effects
 sudo apt install i3 i3blocks kitty rofi feh picom dunst flameshot \
 alsa-utils xbacklight x11-xserver-utils fonts-font-awesome fonts-jetbrains-mono \
 network-manager-gnome redshift
-#add configs files from repo to ~/.config/
+#add configs files from repo to ~/.config/ and images to ~/Pictures/
+#troubleshoot cannot open display: :0; export DISPLAY=:0, xhost +local:, sudo systemctl restart gdm
 
 #golang
 sudo add-apt-repository ppa:longsleep/golang-backports
