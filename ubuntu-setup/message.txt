@@ -1,0 +1,95 @@
+sudo apt update && sudo apt upgrade 
+sudo apt install git
+sudo apt install make
+sudo apt install kitty #terminal
+#add config files from github
+sudo apt install neofetch #for kitty terminal to look nice
+
+sudo apt install ffmpeg -y # Terminal Video / Audio Editing
+sudo apt install ripgrep -y # Improved Grep
+sudo apt install unrar -y # Tool For Handling .rar Files
+sudo apt install unzip -y # Tool For Handling .zip Files
+sudo apt install htop # resource usage monitor
+sudo apt install lm-sensors #monitor heat levels, sudo sensors-detect, sudo service kmod start, sensors
+    
+#fun things
+sudo apt install fortune-mod 
+sudo apt install cowsay
+sudo apt install lolcat
+#fortune | cowsay -f stegosaurus | lolcat
+sudo apt install cmatrix #matrix effects
+
+#i3 setup
+sudo apt install i3 i3blocks kitty rofi feh picom dunst flameshot \
+alsa-utils xbacklight x11-xserver-utils fonts-font-awesome fonts-jetbrains-mono \
+network-manager-gnome redshift
+#add configs files from repo to ~/.config/
+
+#golang
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt install golang-go
+#sqlc # golang code generator for sql queries
+#goose
+
+#nodejs
+sudo apt install curl gnupg -y
+curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
+sudo apt install nodejs -y
+
+#odin
+wget https://apt.llvm.org/llvm.sh
+chmod +x llvm.sh
+sudo ./llvm.sh 20
+export PATH="/usr/lib/llvm-20/bin:$PATH"
+echo 'export PATH="/usr/lib/llvm-20/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+git clone https://github.com/odin-lang/Odin
+cd Odin/
+make release-native
+echo 'export PATH="/home/derp/Odin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+#docker and compose
+#remove old installation sudo apt remove docker docker-engine docker.io containerd runc
+sudo apt update
+sudo apt install ca-certificates curl gnupg lsb-release -y
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+  sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+#optional run docker without sudo
+sudo usermod -aG docker $USER
+newgrp docker
+
+#nvim
+
+#nerd font
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+unzip JetBrainsMono.zip
+fc-cache -fv
+
+<#400300608747208704> message for terminal
+#add to .bashrc
+# Welcome function
+kitty_welcome() {
+    echo "┌────────────────────────────┐"
+    echo "│   Welcome to Kitty! 🐱     │"
+    echo "│  Stay productive, stay 🧠  │"
+    echo "└────────────────────────────┘"
+    neofetch --source ~/Pictures/logo.png --image_backend kitty --colors 1 14 3 6 6 1
+}
+
+# Auto-run on kitty startup
+if [[ "$TERM" == "xterm-kitty" ]]; then
+    kitty_welcome
+fi

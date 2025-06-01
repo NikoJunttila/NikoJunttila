@@ -1,0 +1,7 @@
+#!/bin/bash
+SSID=$(iwgetid -r)
+if [ -n "$SSID" ]; then
+    echo " $SSID"
+else
+    echo " Disconnected"
+fi

@@ -1,0 +1,2 @@
+#!/bin/bash
+acpi | cut -d, -f 2 | xargs echo 🔋

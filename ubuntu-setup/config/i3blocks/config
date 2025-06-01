@@ -1,0 +1,19 @@
+# i3blocks config file
+
+[time]
+command=date '+%a %d %b %H:%M'
+interval=5
+color=#ffffff
+
+[volume]
+command=~/.config/i3blocks/scripts/volume
+interval=2
+signal=10
+
+[battery]
+command=~/.config/i3blocks/scripts/battery
+interval=30
+
+[network]
+command=~/.config/i3blocks/scripts/network
+interval=10
