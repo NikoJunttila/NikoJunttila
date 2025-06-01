@@ -4,6 +4,8 @@ sudo apt install make
 sudo apt install kitty #terminal
 #add config files from github
 sudo apt install neofetch #for kitty terminal to look nice
+sudo snap install brave #firefox might not work in i3
+sudo snap install code --classic #vscode to be safe
 
 sudo apt install ffmpeg -y # Terminal Video / Audio Editing
 sudo apt install ripgrep -y # Improved Grep
