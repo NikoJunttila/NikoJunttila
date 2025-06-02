@@ -1,0 +1,3 @@
+require("randomderp")
+
+print("hello")

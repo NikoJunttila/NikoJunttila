@@ -6,6 +6,7 @@ sudo apt install kitty #terminal
 sudo apt install neofetch #for kitty terminal to look nice
 sudo snap install brave #firefox might not work in i3
 sudo snap install code --classic #vscode to be safe
+sudo apt-get install pulseaudio pavucontrol #audio control software
 
 sudo apt install ffmpeg -y # Terminal Video / Audio Editing
 sudo apt install ripgrep -y # Improved Grep
@@ -73,6 +74,14 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 #nvim
+Download nvim-linux-x86_64.appimage
+Run chmod u+x nvim-linux-x86_64.appimage
+sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
+echo "alias vim='nvim'" >> ~/.bashrc
+source ~/.bashrc
+copy config to ~/.config
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 #nerd font
 mkdir -p ~/.local/share/fonts
