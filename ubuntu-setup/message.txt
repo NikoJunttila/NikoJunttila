@@ -1,7 +1,11 @@
 sudo apt update && sudo apt upgrade 
 sudo apt install git
 sudo apt install make
-sudo apt install kitty #terminal
+# Install latest version directly from Kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+# Add to PATH (add this to your ~/.bashrc)
+echo 'export PATH="$HOME/.local/kitty.app/bin:$PATH"' >> ~/.bashrc
+sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/kitty
 #add config files from github
 sudo apt install neofetch #for kitty terminal to look nice
 sudo snap install brave #firefox might not work in i3
@@ -33,8 +37,11 @@ network-manager-gnome redshift
 sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
 sudo apt install golang-go
+echo 'export PATH="/home/derp/go/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 #sqlc # golang code generator for sql queries
 #goose
+pwd
 
 #nodejs
 sudo apt install curl gnupg -y
