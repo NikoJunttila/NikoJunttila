@@ -8,13 +8,19 @@ font pango:JetBrains Mono 10
 bindsym $mod+Return exec kitty
 
 # Browser launcher
-bindsym $mod+w exec firefox
+bindsym $mod+w exec brave
+
+# Filesearch launcher
+bindsym $mod+Shift+f exec nautilus
+
+# Audio control launcher
+bindsym $mod+Shift+a exec pavucontrol
 
 # Kill focused window
 bindsym $mod+q kill
 
 # App launcher (fixed rofi configuration)
-bindsym $mod+d exec rofi -show drun -theme-str 'window {width: 600px;} listview {lines: 10;}'
+bindsym $mod+d exec ~/.config/rofi/launchers/type-7/launcher.sh
 
 # Alternative rofi launcher with run mode
 bindsym $mod+r exec rofi -show run
