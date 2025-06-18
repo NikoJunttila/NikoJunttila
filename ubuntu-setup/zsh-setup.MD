@@ -17,10 +17,14 @@ sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/kitty
 
 # Tools & packages
 sudo apt install -y fastfetch pulseaudio pavucontrol ffmpeg ripgrep unrar unzip htop unclutter fzf eza lm-sensors \
-fortune-mod cowsay lolcat cmatrix \
-i3 i3blocks kitty rofi feh picom dunst flameshot \
-alsa-utils xbacklight x11-xserver-utils fonts-font-awesome fonts-jetbrains-mono \
-network-manager-gnome redshift
+fortune-mod cowsay lolcat cmatrix
+
+# Sway
+sudo apt install sway waybar rofi flameshot \
+pavucontrol alsa-utils brightnessctl wl-clipboard xdg-desktop-portal-wlr \
+fonts-font-awesome fonts-jetbrains-mono network-manager-gnome redshift-gtk \
+xdg-utils grim slurp nautilus swaybg autotiling playerctl \
+dunst libnotify-bin swaylock
 
 # Brave + VSCode
 sudo snap install brave

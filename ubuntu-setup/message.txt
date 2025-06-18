@@ -32,7 +32,7 @@ sudo apt install cmatrix #matrix effects
 sudo apt install fortune-mod cowsay lolcat cmatrix
 
 #i3 setup
-sudo apt install i3 i3blocks kitty rofi feh picom dunst flameshot \
+sudo apt install i3 i3blocks rofi feh picom dunst flameshot \
 alsa-utils xbacklight x11-xserver-utils fonts-font-awesome fonts-jetbrains-mono \
 network-manager-gnome redshift
 #add configs files from repo to ~/.config/ and images to ~/Pictures/
