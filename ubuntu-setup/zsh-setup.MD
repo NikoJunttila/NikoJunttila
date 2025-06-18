@@ -24,7 +24,7 @@ sudo apt install sway waybar rofi flameshot \
 pavucontrol alsa-utils brightnessctl wl-clipboard xdg-desktop-portal-wlr \
 fonts-font-awesome fonts-jetbrains-mono network-manager-gnome redshift-gtk \
 xdg-utils grim slurp nautilus swaybg autotiling playerctl \
-dunst libnotify-bin swaylock
+dunst libnotify-bin swaylock swayidle
 
 # Brave + VSCode
 sudo snap install brave
