@@ -7,17 +7,21 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 echo 'export PATH="$HOME/.local/kitty.app/bin:$PATH"' >> ~/.bashrc
 sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/kitty
 #add config files from github
-sudo apt install neofetch #for kitty terminal to look nice
+sudo apt install fastfetch #for kitty terminal to look nice
 sudo snap install brave #firefox might not work in i3
 sudo snap install code --classic #vscode to be safe
-sudo apt-get install pulseaudio pavucontrol #audio control software
+sudo apt install pulseaudio pavucontrol #audio control software
 
 sudo apt install ffmpeg -y # Terminal Video / Audio Editing
 sudo apt install ripgrep -y # Improved Grep
 sudo apt install unrar -y # Tool For Handling .rar Files
 sudo apt install unzip -y # Tool For Handling .zip Files
 sudo apt install htop # resource usage monitor
+sudo apt install unclutter # hides mouse after inactive
+sudo apt install fzf # fuzzy search history with Ctrl+R
+sudo apt install eza # better ls # eza -la --tree
 sudo apt install lm-sensors #monitor heat levels, sudo sensors-detect, sudo service kmod start, sensors
+sudo apt install ffmpeg ripgrep unrar unzip htop lm-sensors unclutter, fzf
     
 #fun things
 sudo apt install fortune-mod 
@@ -25,6 +29,7 @@ sudo apt install cowsay
 sudo apt install lolcat
 #fortune | cowsay -f stegosaurus | lolcat
 sudo apt install cmatrix #matrix effects
+sudo apt install fortune-mod cowsay lolcat cmatrix
 
 #i3 setup
 sudo apt install i3 i3blocks kitty rofi feh picom dunst flameshot \
@@ -82,13 +87,14 @@ newgrp docker
 
 #nvim
 Download nvim-linux-x86_64.appimage
-Run chmod u+x nvim-linux-x86_64.appimage
+sudo chmod u+x nvim-linux-x86_64.appimage
 sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 echo "alias vim='nvim'" >> ~/.bashrc
 source ~/.bashrc
 copy config to ~/.config
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+:MasonInstallAll
 
 #nerd font
 mkdir -p ~/.local/share/fonts
