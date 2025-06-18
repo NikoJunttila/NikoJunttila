@@ -38,6 +38,8 @@ network-manager-gnome redshift
 #add configs files from repo to ~/.config/ and images to ~/Pictures/
 #troubleshoot cannot open display: :0; export DISPLAY=:0, xhost +local:, sudo systemctl restart gdm
 
+#sway
+
 #golang
 sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
