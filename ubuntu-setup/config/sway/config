@@ -24,6 +24,9 @@ bindsym $mod+Shift+f exec $filemanager
 # Audio control launcher
 bindsym $mod+Shift+a exec pavucontrol
 
+# Screenshot
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
+
 # Kill focused window
 bindsym $mod+q kill
 
