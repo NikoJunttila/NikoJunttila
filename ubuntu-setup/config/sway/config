@@ -1,6 +1,8 @@
 # Set mod key
 set $mod Mod4
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # Font
 font pango:JetBrains Mono 10
 
@@ -191,7 +193,8 @@ assign [app_id="nautilus"] workspace $ws4
 # Autostart programs
 exec_always waybar
 exec autotiling
-
+# Notification daemon
+exec dunst
 # Idle management with swayidle
 exec swayidle -w \
     timeout 300 'swaylock -i ~/.config/sway/lockscreen.png -f' \
@@ -199,8 +202,7 @@ exec swayidle -w \
          resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -i ~/.config/sway/lockscreen.png -f'
 
-# Notification daemon
-exec dunst
+
 
 # Screen lock
 bindsym $mod+Shift+x exec swaylock -i ~/.config/sway/lockscreen.png -f
@@ -231,7 +233,7 @@ bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
 
 # Autostart utilities
 exec nm-applet
-exec redshift-gtk
+exec redshift -c ~/.config/redshift.conf
 
 # Styling
 gaps inner 5
