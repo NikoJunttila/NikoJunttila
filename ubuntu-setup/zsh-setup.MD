@@ -23,12 +23,14 @@ fortune-mod cowsay lolcat cmatrix
 sudo apt install sway waybar rofi flameshot \
 pavucontrol alsa-utils brightnessctl wl-clipboard xdg-desktop-portal-wlr \
 fonts-font-awesome fonts-jetbrains-mono network-manager-gnome redshift-gtk \
-xdg-utils grim slurp nautilus swaybg autotiling playerctl \
+xdg-utils grim slurp nautilus swaybg autotiling playerctl swappy \
 dunst libnotify-bin swaylock swayidle
 
-# Brave + VSCode
+# Brave + VSCode + Insomnia
 sudo snap install brave
 sudo snap install code --classic
+sudo snap install insomnia
+
 
 # Go
 sudo add-apt-repository -y ppa:longsleep/golang-backports
