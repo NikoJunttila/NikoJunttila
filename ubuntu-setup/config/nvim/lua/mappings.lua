@@ -12,6 +12,10 @@ map("i", "jk", "<ESC>")
 map("n", "ö", "$", { desc = "Jump to end of line" })
 map("n", "ä", "0", { desc = "Jump to start of line" })
 
+map("v", "ö", "$", { desc = "Jump to end of line" })
+map("v", "ä", "0", { desc = "Jump to start of line" })
+
+
 map("n","m",":m +1 <CR>",{desc= "Move down"})
 map("n","n",":m -2 <CR>",{desc= "Move Up"})
 map("v","n",":m -2 <CR>",{desc= "Move Up"})
