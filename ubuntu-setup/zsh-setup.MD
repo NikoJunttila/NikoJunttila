@@ -30,7 +30,7 @@ dunst libnotify-bin swaylock swayidle
 sudo snap install brave
 sudo snap install code --classic
 sudo snap install insomnia
-
+sudo snap install steam
 
 # Go
 sudo add-apt-repository -y ppa:longsleep/golang-backports
