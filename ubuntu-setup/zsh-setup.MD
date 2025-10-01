@@ -6,9 +6,21 @@ sudo apt install -y git make curl zsh
 
 # Switch to zsh as default shell
 chsh -s $(which zsh)
-
+# restart or log out at this point to make the default shell change happen
 # Install Oh My Zsh (with unattended flag)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# Install zsh-autosuggestions plugin
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# Install zsh-syntax-highlighting plugin (bonus - highlights valid commands)
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+#Edit your ~/.zshrc file and find the plugins= line, then modify it to: plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+#theme
+#add theme after installing all fonts
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+# Find the ZSH_THEME in .zshrc line and change it to: ZSH_THEME="powerlevel10k/powerlevel10k"
+p10k configure
+
 
 # Kitty terminal install
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
