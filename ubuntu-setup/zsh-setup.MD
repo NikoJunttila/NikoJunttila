@@ -21,7 +21,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # Find the ZSH_THEME in .zshrc line and change it to: ZSH_THEME="powerlevel10k/powerlevel10k"
 p10k configure
 
-
 # Kitty terminal install
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 echo 'export PATH="$HOME/.local/kitty.app/bin:$PATH"' >> ~/.zshrc
@@ -79,9 +78,10 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 # Neovim
-wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-tar -xzf nvim-linux64.tar.gz
-sudo mv nvim-linux64/bin/nvim /usr/local/bin/
+# Install via PPA
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt install neovim
 echo "alias vim='nvim'" >> ~/.zshrc
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
