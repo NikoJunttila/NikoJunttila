@@ -30,7 +30,8 @@ dunst libnotify-bin swaylock swayidle
 sudo snap install brave
 sudo snap install code --classic
 sudo snap install insomnia
-sudo snap install steam
+
+curl -L -o steam.deb https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb && sudo apt install ./steam.deb
 
 # Go
 sudo add-apt-repository -y ppa:longsleep/golang-backports
