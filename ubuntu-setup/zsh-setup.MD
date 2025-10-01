@@ -2,7 +2,7 @@
 sudo apt update && sudo apt upgrade -y
 
 # Essential tools
-sudo apt install -y git make curl zsh
+sudo apt install -y git make curl zsh gnupg
 
 # Switch to zsh as default shell
 chsh -s $(which zsh)
@@ -31,7 +31,7 @@ sudo apt install -y fastfetch pulseaudio pavucontrol ffmpeg ripgrep unrar unzip 
 fortune-mod cowsay lolcat cmatrix
 
 # Sway
-sudo apt install sway waybar rofi flameshot \
+sudo apt install -y sway waybar rofi flameshot \
 pavucontrol alsa-utils brightnessctl wl-clipboard xdg-desktop-portal-wlr \
 fonts-font-awesome fonts-jetbrains-mono network-manager-gnome redshift-gtk \
 xdg-utils grim slurp nautilus swaybg autotiling playerctl swappy \
@@ -41,7 +41,7 @@ dunst libnotify-bin swaylock swayidle
 sudo snap install brave
 sudo snap install code --classic
 sudo snap install insomnia
-
+#snap version of steam might have errors. idk
 curl -L -o steam.deb https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb && sudo apt install ./steam.deb
 
 # Go
@@ -51,21 +51,22 @@ sudo apt install -y golang-go
 echo 'export PATH="$HOME/go/bin:$PATH"' >> ~/.zshrc
 
 # Node.js
-sudo apt install -y curl gnupg
 curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
 sudo apt install -y nodejs
 
 # Odin + LLVM 20
-wget https://apt.llvm.org/llvm.sh
-chmod +x llvm.sh
-sudo ./llvm.sh 20
-echo 'export PATH="/usr/lib/llvm-20/bin:$PATH"' >> ~/.zshrc
+#wget https://apt.llvm.org/llvm.sh
+#chmod +x llvm.sh
+#sudo ./llvm.sh 20
+#echo 'export PATH="/usr/lib/llvm-20/bin:$PATH"' >> ~/.zshrc
+#ubuntu 25.04 has llvm in apt
+sudo apt install clang-20 lldb-20 lld-20 clangd-20
 git clone https://github.com/odin-lang/Odin ~/Odin
 cd ~/Odin && make release-native
 echo 'export PATH="$HOME/Odin:$PATH"' >> ~/.zshrc
 
 # Docker
-sudo apt install -y ca-certificates curl gnupg lsb-release
+sudo apt install -y ca-certificates lsb-release
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
   sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
