@@ -1,0 +1,2 @@
+sudo apt install clang -y
+sudo apt install -y libx11-dev libxi-dev libxcursor-dev libgl1-mesa-dev
