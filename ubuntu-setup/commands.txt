@@ -6,5 +6,8 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak install com.freerdp.FreeRDP
 start compose file
 #connect remotely after you can see in browser that windows is working
-flatpak run com.freerdp.FreeRDP /u:bill /p:gates /v:127.0.0.1:3389 /cert:ignore /f /dynamic-resolution
+flatpak run com.freerdp.FreeRDP /u:bill /p:gates /v:127.0.0.1:3389 /cert:ignore /f /dynamic-resolution /sound
 
+#If audio still doesn't work, check these:
+#Flatpak permissions - The Flatpak might need PulseAudio/PipeWire access:
+flatpak override --user com.freerdp.FreeRDP --socket=pulseaudio
