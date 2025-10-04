@@ -1,0 +1,9 @@
+Windows for linux.
+git clone https://github.com/dockur/windows.git
+go to windows folder and modify compose file
+sudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install com.freerdp.FreeRDP
+flatpak run com.freerdp.FreeRDP /u:bill /p:gates /v:127.0.0.1:3389 /cert:ignore
+start compose file
+
