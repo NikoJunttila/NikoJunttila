@@ -1,0 +1,18 @@
+services:
+  coolercontrold:
+    image: coolercontrol/coolercontrold:latest
+    container_name: coolercontrol
+    privileged: true
+    restart: unless-stopped
+    ports:
+      - "11987:11987"
+    volumes:
+      - /etc/coolercontrol:/etc/coolercontrol
+      - /run/dbus:/run/dbus:ro
+      - /sys:/sys
+      - /dev:/dev
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    network_mode: host
+    environment:
+      - TZ=Europe/Helsinki  # Adjust to your timezone
