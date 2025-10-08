@@ -71,6 +71,7 @@ Add an A record in your domain's DNS settings:
 - **TTL:** 300 (5 minutes) or default
 
 Wait for DNS propagation (can take up to 48 hours, usually much faster).
+Add both example.com and www.example.com if you want www support
 
 ## Step 5: Create NGINX Configuration
 
