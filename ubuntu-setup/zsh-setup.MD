@@ -1,5 +1,6 @@
 # Update system
 sudo apt update && sudo apt upgrade -y
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Essential tools
 sudo apt install -y git make curl zsh gnupg
