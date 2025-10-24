@@ -16,7 +16,6 @@ kitty_welcome() {
 if [[ "$TERM" == "xterm-kitty" ]]; then
     kitty_welcome
 fi
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -96,7 +95,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,17 +127,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim='nvim'
+alias ls='eza --icons --group-directories-first --color=auto'
+alias or='odin run .'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# 🛣️ Add custom paths to PATH
 export PATH="$HOME/.local/kitty.app/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
-export PATH="/usr/lib/llvm-20/bin:$PATH"
 export PATH="$HOME/Odin:$PATH"
-
-# 📝 Aliases
-alias vim='nvim'
-alias ls='eza --icons --group-directories-first --color=auto'
-
+export PATH="$HOME/go/bin:$PATH"

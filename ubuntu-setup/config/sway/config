@@ -11,9 +11,12 @@ set $term kitty
 set $browser brave
 set $filemanager nautilus
 set $launcher ~/.config/rofi/launchers/type-7/launcher.sh
+set $windows flatpak run com.freerdp.FreeRDP /u:bill /p:gates /v:127.0.0.1:3389 /cert:ignore /f /dynamic-resolution /sound
 
 # Terminal
 bindsym $mod+Return exec $term
+
+bindsym $mod+Shift+w exec $windows
 
 # Browser launcher
 bindsym $mod+w exec $browser
@@ -189,10 +192,10 @@ for_window [window_role="dialog"] floating enable
 for_window [window_type="dialog"] floating enable
 
 # Application assignments
-assign [app_id="kitty"] workspace $ws1
-assign [app_id="brave-browser"] workspace $ws2
-assign [app_id="code"] workspace $ws3
-assign [app_id="nautilus"] workspace $ws4
+# assign [app_id="kitty"] workspace $ws1
+# assign [app_id="brave-browser"] workspace $ws2
+# assign [app_id="code"] workspace $ws3
+# assign [app_id="nautilus"] workspace $ws4
 
 # Autostart programs
 exec_always waybar
@@ -201,8 +204,8 @@ exec autotiling
 exec dunst
 # Idle management with swayidle
 exec swayidle -w \
-    timeout 300 'swaylock -i ~/.config/sway/lockscreen.png -f' \
-    timeout 600 'swaymsg "output * power off"' \
+    timeout 3800 'swaylock -i ~/.config/sway/lockscreen.png -f' \
+    timeout 4800 'swaymsg "output * power off"' \
          resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -i ~/.config/sway/lockscreen.png -f'
 
