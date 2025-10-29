@@ -180,7 +180,7 @@ output HDMI-A-1 {
 }
 
 # Default wallpaper for all outputs
-output * bg ~/.config/sway/wallpaper.jpg fill
+output * bg ~/.config/sway/wallpaper.png fill
 
 # Window rules
 for_window [app_id="pavucontrol"] floating enable, resize set 800 600
