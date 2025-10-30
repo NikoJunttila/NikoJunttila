@@ -7,12 +7,12 @@ return {
       require("nvim-surround").setup {
         keymaps = {
           -- Normal mode
-          insert = "ys", -- ys + motion + char: "ys" + "iw" + "'" = 'word'
-          insert_line = "yss", -- yss + char: surrounds entire line
-          normal = "ds", -- ds + char: delete surround
-          normal_cur = "cs", -- cs + old + new: change surround
-          normal_line = "yS", -- yS + motion + char: surround on new lines
-          normal_cur_line = "cS", -- cS + old + new: change surround on new lines
+          -- insert = "ys", -- ys + motion + char: "ys" + "iw" + "'" = 'word'
+          -- insert_line = "yss", -- yss + char: surrounds entire line
+          -- normal = "ds", -- ds + char: delete surround
+          -- normal_cur = "cs", -- cs + old + new: change surround
+          -- normal_line = "yS", -- yS + motion + char: surround on new lines
+          -- normal_cur_line = "cS", -- cS + old + new: change surround on new lines
 
           -- Visual mode
           visual = "S", -- Select text, press S, then the char
