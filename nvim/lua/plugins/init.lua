@@ -84,6 +84,8 @@ return {
         "javascript",
         "svelte",
         "templ",
+        "markdown",
+        "markdown_inline",
       },
       automatic_installation = true,
     },
