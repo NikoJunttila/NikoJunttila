@@ -33,7 +33,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -95,7 +95,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,12 +127,24 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH="$HOME/.local/kitty.app/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 alias vim='nvim'
 alias ls='eza --icons --group-directories-first --color=auto'
-alias or='odin run .'
+alias lol='fortune | cowsay -f stegosaurus | lolcat'
+alias matrix='cmatrix'
+alias python='python3'
+alias m='make'
+alias cd='z'
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="$HOME/.local/kitty.app/bin:$PATH"
-export PATH="$HOME/Odin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
+export PATH="/usr/lib/llvm-20/bin:$PATH"
+
+export AWS_PROFILE=
+
+export GROQ_API_KEY=
