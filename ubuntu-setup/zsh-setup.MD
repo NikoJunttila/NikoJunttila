@@ -29,7 +29,7 @@ sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/kitty
 
 # Tools & packages
 sudo apt install -y fastfetch pulseaudio pavucontrol ffmpeg ripgrep unrar unzip htop unclutter fzf eza lm-sensors \
-fortune-mod cowsay lolcat cmatrix
+fortune-mod cowsay lolcat cmatrix zoxide
 
 # Sway
 sudo apt install -y sway waybar rofi flameshot \
