@@ -78,5 +78,7 @@ vim.schedule(function()
     vim.api.nvim_set_hl(0, "NotifyWARNBorder", { bg = "none" })
     vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { bg = "none" })
     vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { bg = "none" })
+    vim.api.nvim_set_hl(0, "IblIndent", { fg = "#3b4261", bg = "none" })
+    vim.api.nvim_set_hl(0, "IblScope", { fg = "#7aa2f7", bg = "none" })
   end, 100) -- 100ms delay to ensure everything is loaded
 end)
