@@ -22,7 +22,7 @@ return {
         backend = "kitty", -- automatically detect
       },
       scroll = {
-        enabled = true,
+        enabled = false,
         animate = {
           duration = { step = 15, total = 250 },
           easing = "linear",
