@@ -1,0 +1,27 @@
+# Obsidian plugins I like to have
+
+## MAKE.md
+Quickly generate and maintain an index/overview for a folder or project area.
+
+## Omnisearch
+Fast full-text search with better ranking and easier discovery across the vault.
+
+## Excalidraw
+Whiteboard-style drawings and diagrams directly inside Obsidian notes.
+
+## Recent Files
+A handy list of recently opened notes so you can jump back into what you were working on.
+
+## Tasks
+Turns checkboxes into a powerful task system (filters, queries, recurring tasks, due dates).
+
+---
+
+# Sync plan (data + plugins across devices)
+
+I’m using **Obsidian LiveSync** (self-hosted) to sync my vault between multiple machines without paying for Obsidian Sync.
+
+- **Notes/data:** synced via LiveSync as normal.
+- **Plugins & settings:** synced by syncing the `.obsidian` folder (plugin files + configuration), so each device ends up with the same plugin set enabled and configured.
+
+---
