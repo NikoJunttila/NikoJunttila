@@ -61,6 +61,7 @@ typeset -U path PATH
 path=(
   $HOME/.local/kitty.app/bin
   $HOME/go/bin
+  $HOME/Odin
   $HOME/.local/bin
   /usr/lib/llvm-20/bin
   $path
@@ -78,10 +79,12 @@ alias g='git'
 alias gs='git status'
 alias gl='git log --oneline --graph --decorate'
 
+alias lgtm='git add . && git commit -m "quick" && git push origin master'
+
 alias cat='bat'
 alias find='fd'
 alias grep='rg'
-
+alias cd='z'
 
 eval "$(zoxide init zsh)"
 
@@ -89,7 +92,10 @@ eval "$(zoxide init zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="/usr/lib/llvm-20/bin:$PATH"
 
-export AWS_PROFILE=
+export AWS_PROFILE=derp
 
-export GROQ_API_KEY=
-zsh -xv
+export OPENAI_API_KEY=
+
+export TAILSCALE_AUTHKEY=
+
+export TF_VAR_hcloud_token=
