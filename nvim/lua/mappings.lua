@@ -15,6 +15,11 @@ map("n", "n", ":m -2 <CR>", { desc = "Move Up" })
 
 map("n", "<leader>lr", ":LspRestart <CR>", { desc = "Reset lsp" })
 
+-- find references
+map("n", "<leader>gr", function()
+  require("telescope.builtin").lsp_references()
+end, { desc = "Telescope: LSP references" })
+
 -- Buffer management mappings
 map("n", "<leader>bx", function()
   local ok = pcall(vim.cmd, "bufdo bd")
