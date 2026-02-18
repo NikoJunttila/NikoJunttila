@@ -18,10 +18,9 @@
 
 **Full Stack Developer** <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Working @HUR with golang as full stack developer.
 
--  
 - Currently working with **odin** and home labbing in free time.
 - Web dev experience with most web frameworks, backend with Golang + js/ts stuff.
-- other experience with CLI tools of all kinds of and Python QT desktop apps.
+- other experience with CLI tools of all kinds of and Python QT desktop apps, Discord bots, ecommerce.
 - open for freelance projects.
 - 📫 Find all my contacts on my [web CV](https://junttila.dev/cv)
 - 🇫🇮 Based in Finland
