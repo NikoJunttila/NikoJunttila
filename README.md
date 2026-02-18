@@ -16,11 +16,13 @@
 
 <img align="right" alt="DiscordGo logo" src="/imgs/discordgo.svg" width="200">
 
-**Full Stack Developer** <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> passionate about creating efficient and scalable web applications.
+**Full Stack Developer** <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Working @HUR with golang as full stack developer.
 
-- 🔭 Currently working with **SvelteKit** and **Golang**
-- 🌱 Experience with **js/ts**,**Vue**, **React**, **Angular**,**Python** ,and more
-- 💼 Open for collaboration and exciting projects
+-  
+- Currently working with **odin** and home labbing in free time.
+- Web dev experience with most web frameworks, backend with Golang + js/ts stuff.
+- other experience with CLI tools of all kinds of and Python QT desktop apps.
+- open for freelance projects.
 - 📫 Find all my contacts on my [web CV](https://junttila.dev/cv)
 - 🇫🇮 Based in Finland
 
@@ -95,11 +97,6 @@
     <td align="center"><strong>Project</strong></td>
     <td align="center"><strong>Description</strong></td>
     <td align="center"><strong>Tech Stack</strong></td>
-  </tr>
-  <tr>
-    <td><a href="https://store.junttila.dev/">🏪 E-commerce Store</a></td>
-    <td>Modern online storefront</td>
-    <td>SvelteKit + Vendure</td>
   </tr>
   <tr>
     <td><a href="https://analytics.junttila.dev/">📊 Analytics Service</a></td>
