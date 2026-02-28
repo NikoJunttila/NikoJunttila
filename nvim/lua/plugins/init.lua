@@ -1,36 +1,18 @@
 return {
+  -- formatting
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
     opts = require "configs.conform",
   },
+
+  -- lsp config
   {
     "neovim/nvim-lspconfig",
+    event = "User FilePost",
     config = function()
-      require "configs.lspconfig"
+      require("configs.lspconfig").defaults()
     end,
-  },
-  {
-    "folke/trouble.nvim",
-    opts = {},
-    lazy = false,
-    cmd = "Trouble",
-    keys = {
-      {
-        "<leader>er",
-        "<cmd>Trouble diagnostics toggle focus=true filter.severity=vim.diagnostic.severity.ERROR<cr>",
-        desc = "Errors (Trouble)",
-      },
-      {
-        "<leader>xx",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
-    },
-  },
-  {
-    "williamboman/mason.nvim",
-    opts = {},
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -50,6 +32,7 @@ return {
       automatic_installation = true,
     },
   },
+
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     dependencies = { "williamboman/mason.nvim" },
@@ -66,10 +49,13 @@ return {
       run_on_start = true,
     },
   },
-  { import = "nvchad.blink.lazyspec" },
 
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    build = ":TSUpdate",
     opts = {
       ensure_installed = {
         "vim",
@@ -88,13 +74,16 @@ return {
         "markdown_inline",
       },
       automatic_installation = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = {
+        enable = true,
+      },
     },
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = false,
-    },
-    indent = {
-      enable = true,
-    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
   },
 }

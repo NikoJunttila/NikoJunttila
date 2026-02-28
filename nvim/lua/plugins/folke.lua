@@ -1,8 +1,64 @@
 return {
   {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      lsp = {
+        signature = { enabled = false }, -- disable signature help popups
+        hover = { enabled = false },     -- optional: disable hover doc popups too
+      },
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      {
+        "rcarriga/nvim-notify",
+        opts = {
+          background_colour = "#000000",
+        },
+      },
+    },
+  },
+  {
+    "folke/which-key.nvim",
+    keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
+    cmd = "WhichKey",
+    opts = function()
+      dofile(vim.g.base46_cache .. "whichkey")
+      return {}
+    end,
+  },
+  {
+    "folke/zen-mode.nvim",
+    lazy = false, -- this makes it load on startup
+    config = function()
+      require("zen-mode").setup {}
+      vim.keymap.set("n", "<leader>zm", function()
+        require("zen-mode").toggle()
+      end, { desc = "Toggle Zen Mode" })
+    end,
+  },
+  {
+    "folke/trouble.nvim",
+    opts = {},
+    -- lazy = false,
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>er",
+        "<cmd>Trouble diagnostics toggle focus=true filter.severity=vim.diagnostic.severity.ERROR<cr>",
+        desc = "Errors (Trouble)",
+      },
+      {
+        "<leader>xx",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+    },
+  },
+  {
     "folke/snacks.nvim",
     priority = 1000,
-    lazy = false,
+    -- lazy = false,
     ---@type snacks.Config
     opts = {
       bigfile = { enabled = true },
@@ -26,10 +82,6 @@ return {
       },
     },
     keys = {
-      -- Image viewing
-      { "<leader>ip", function() Snacks.image.preview() end,           desc = "Preview Image" },
-      { "<leader>ic", function() Snacks.image.close() end,             desc = "Close Image" },
-
       -- Toggle features
       { "<leader>.",  function() Snacks.scratch() end,                 desc = "Toggle Scratch Buffer" },
       { "<leader>S",  function() Snacks.scratch.select() end,          desc = "Select Scratch Buffer" },

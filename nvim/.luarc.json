@@ -1,0 +1,24 @@
+{
+    "runtime": {
+        "version": "LuaJIT"
+    },
+    "diagnostics": {
+        "globals": [
+            "vim",
+            "Snacks"
+        ]
+    },
+    "workspace": {
+        "checkThirdParty": false,
+        "library": [
+            "$VIMRUNTIME/lua",
+            "/home/derp/.local/share/nvim/lazy/NvChad/lua",
+            "/home/derp/.local/share/nvim/lazy/base46/lua",
+            "/home/derp/.local/share/nvim/lazy/ui/lua",
+            "/home/derp/.local/share/nvim/lazy/ui/nvchad_types",
+            "/home/derp/.local/share/nvim/lazy/lazy.nvim/lua",
+            "/home/derp/.local/share/nvim/lazy/snacks.nvim/lua",
+            "/home/derp/.local/share/nvim/lazy/render-markdown.nvim/lua"
+        ]
+    }
+}

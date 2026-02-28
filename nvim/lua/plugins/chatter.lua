@@ -1,7 +1,7 @@
 return {
   {
     "nikojunttila/ai-chatter",
-    lazy = false,
+    event = "VeryLazy",
     config = function()
       require("ai-chatter").setup {
         -- Choose backend: "ollama", "openai", "anthropic", "groq"
