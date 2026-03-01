@@ -2,7 +2,15 @@ return {
   {
     "kylechui/nvim-surround",
     version = "*",
-    event = "VeryLazy",
+    keys = {
+      { "ys", desc = "Add surround" },
+      { "yss", desc = "Add surround line" },
+      { "yS", desc = "Add surround (multi-line)" },
+      { "cs", desc = "Change surround" },
+      { "ds", desc = "Delete surround" },
+      { "S", mode = "x", desc = "Add surround (visual)" },
+      { "gS", mode = "x", desc = "Add surround (visual, multi-line)" },
+    },
     config = function()
       require("nvim-surround").setup {
         keymaps = {

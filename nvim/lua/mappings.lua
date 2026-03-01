@@ -166,3 +166,4 @@ map("n", "<leader>mt", function()
   vim.cmd "SupermavenStop"
   vim.notify("Supermaven Stopped", vim.log.levels.WARN, { title = "Supermaven" })
 end, { desc = "Supermaven stop" })
+

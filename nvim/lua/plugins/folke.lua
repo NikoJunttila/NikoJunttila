@@ -29,18 +29,29 @@ return {
   },
   {
     "folke/zen-mode.nvim",
-    lazy = false, -- this makes it load on startup
-    config = function()
-      require("zen-mode").setup {}
-      vim.keymap.set("n", "<leader>zm", function()
-        require("zen-mode").toggle()
-      end, { desc = "Toggle Zen Mode" })
-    end,
+    keys = {
+      { "<leader>zm", function() require("zen-mode").toggle() end, desc = "Toggle Zen Mode" },
+    },
+    opts = {
+      window = {
+        backdrop = 1, -- 1 means fully opaque (no transparency blending)
+        width = 120,  -- width of the Zen window
+        options = {
+          -- You can disable native vim UI elements here:
+          -- number = false,
+          -- relativenumber = false,
+          -- signcolumn = "no",
+        }
+      },
+      -- You can use this callback to force pitch black background sidebars:
+      on_open = function()
+        vim.api.nvim_set_hl(0, "ZenBg", { bg = "#000000" })
+      end,
+    },
   },
   {
     "folke/trouble.nvim",
     opts = {},
-    -- lazy = false,
     cmd = "Trouble",
     keys = {
       {
