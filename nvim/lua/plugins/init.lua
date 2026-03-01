@@ -16,7 +16,7 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    lazy = false,
+    event = "User FilePost",
     dependencies = { "williamboman/mason.nvim" },
     opts = {
       ensure_installed = {
@@ -36,7 +36,7 @@ return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     dependencies = { "williamboman/mason.nvim" },
-    lazy = false,
+    event = "User FilePost",
     opts = {
       ensure_installed = {
         -- Formatters
