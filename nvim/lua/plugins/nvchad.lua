@@ -122,22 +122,8 @@ return {
         "https://codeberg.org/FelipeLema/cmp-async-path.git",
       },
     },
-    -- overwrite to make supermaven autocomplete work?
     opts = function()
-      local cmp = require "cmp"
-      local conf = require "nvchad.configs.cmp"
-
-      conf.mapping["<Esc>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.close()
-        elseif require("luasnip").in_snippet() and require("luasnip").jumpable(-1) then
-          require("luasnip").jump(-1)
-        else
-          fallback()
-        end
-      end)
-
-      return conf
+      return require "configs.cmp"
     end,
   },
 

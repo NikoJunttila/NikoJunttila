@@ -156,14 +156,4 @@ map("n", "<leader>wk", function()
   vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
 end, { desc = "whichkey query lookup" })
 
--- Supermaven
-map("n", "<leader>ms", function()
-  vim.cmd "SupermavenStart"
-  vim.notify("Supermaven Started", vim.log.levels.INFO, { title = "Supermaven" })
-end, { desc = "Supermaven start" })
-
-map("n", "<leader>mt", function()
-  vim.cmd "SupermavenStop"
-  vim.notify("Supermaven Stopped", vim.log.levels.WARN, { title = "Supermaven" })
-end, { desc = "Supermaven stop" })
-
+-- map("i", "<A-f>", require("neocodeium").accept)
