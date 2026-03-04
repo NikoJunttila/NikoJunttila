@@ -10,5 +10,8 @@ you can use the following keybinds:
 <A-e> to start AI and cycle through suggestions
 <A-f> to accept a suggestion
 
-TODO:
+## mermaid charts
 
+getting mermaid to work on ubuntu sucks, try on arch.
+
+TODO:
