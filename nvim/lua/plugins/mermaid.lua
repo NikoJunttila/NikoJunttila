@@ -5,47 +5,43 @@ return {
     opts = {
       backend = "kitty",
       processor = "magick_cli",
+
+      max_width = 100,
+      max_height = 40,
+
       integrations = {
         markdown = {
           enabled = true,
           clear_in_insert_mode = false,
+          download_remote_images = true,
           only_render_image_at_cursor = false,
+          only_render_image_at_cursor_mode = "popup", -- or "inline"
+          floating_windows = false,                   -- if true, images will be rendered in floating markdown windows
+          filetypes = { "markdown", "vimwiki" },      -- markdown extensions (ie. quarto) can go here
         },
       },
-      hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" },
+
+      window_overlap_clear_enabled = true,
     },
+    hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" }, -- render image files as images when opened
   },
 
-  -- {
-  --   "3rd/diagram.nvim",
-  --   dependencies = { "3rd/image.nvim" },
-  --   opts = {
-  --     -- Manual-only workflow: no automatic rendering
-  --     events = {
-  --       render_buffer = {}, -- disable auto render
-  --       clear_buffer = { "BufUnload" }, -- safer than BufLeave
-  --     },
-  --     renderer_options = {
-  --       mermaid = {
-  --         theme = "dark",
-  --         scale = 2,
-  --         cli_args = nil,
-  --       },
-  --     },
-  --   },
-  --   keys = {
-  --     {
-  --       "<leader>k",
-  --       function()
-  --         local ft = vim.bo.filetype
-  --         if ft ~= "markdown" and ft ~= "norg" then
-  --           return
-  --         end
-  --         require("diagram").show_diagram_hover()
-  --       end,
-  --       mode = "n",
-  --       desc = "Show diagram hover",
-  --     },
-  --   },
-  -- },
+  {
+    "3rd/diagram.nvim",
+    ft = { "markdown", "norg" }, -- ✅ load only for these
+    dependencies = { "3rd/image.nvim" },
+    opts = {
+      events = {
+        render_buffer = { "InsertLeave", "BufWinEnter", "TextChanged" },
+        clear_buffer = { "BufLeave" },
+      },
+      renderer_options = {
+        mermaid = {
+          theme = "dark",
+          scale = 2,
+          cli_args = nil,
+        },
+      },
+    },
+  },
 }

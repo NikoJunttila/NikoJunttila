@@ -13,5 +13,12 @@ you can use the following keybinds:
 ## mermaid charts
 
 getting mermaid to work on ubuntu sucks, try on arch.
+For arch just download mermaid-cli from Package manager
 
+---
+```mermaid
+graph LR
+    A --> B
+
+```
 TODO:
