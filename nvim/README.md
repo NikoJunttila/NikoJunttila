@@ -12,7 +12,7 @@ you can use the following keybinds:
 
 ## mermaid charts
 
-getting mermaid to work on ubuntu sucks, try on arch.
+getting mermaid to work on ubuntu sucks.
 For arch just download mermaid-cli from Package manager
 
 ---
