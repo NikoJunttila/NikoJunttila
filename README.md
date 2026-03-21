@@ -20,9 +20,10 @@
 
 - Currently working with **odin** and home labbing in free time.
 - Web dev experience with most web frameworks, backend with Golang + js/ts stuff.
-- other experience with CLI tools of all kinds of and Python QT desktop apps, Discord bots, ecommerce.
+- other experience with CLI tools of all kinds, Python QT desktop apps, Discord bots and ecommerce (stripe / paytrail / vendure).
+- some devops experience settings up ci/cd, testing things and AWS / Azure experience.
 - open for freelance projects.
-- 📫 Find all my contacts on my [web CV](https://junttila.dev/cv)
+- 📫 Find all my contacts on my. [web CV](https://junttila.dev/cv)
 - 🇫🇮 Based in Finland
 
 ---
@@ -47,11 +48,8 @@
 ![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-![Vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
-![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-257bd6?style=for-the-badge&logo=docker&logoColor=white)
 
 </div>
