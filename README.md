@@ -101,7 +101,7 @@
     <td>SvelteKit + Golang</td>
   </tr>
   <tr>
-    <td><a href="https://test.randomderp.org/">📅 Calendar App</a></td>
+    <td><a href="https://booking.junttila.dev/">📅 Calendar App</a></td>
     <td>Time reservation system</td>
     <td>Go + HTMX Stack</td>
   </tr>
