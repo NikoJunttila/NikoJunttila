@@ -5,7 +5,7 @@ return {
     opts = {
       lsp = {
         signature = { enabled = false }, -- disable signature help popups
-        hover = { enabled = false }, -- optional: disable hover doc popups too
+        hover = { enabled = false },     -- optional: disable hover doc popups too
       },
     },
     dependencies = {
@@ -41,7 +41,7 @@ return {
     opts = {
       window = {
         backdrop = 1, -- 1 means fully opaque (no transparency blending)
-        width = 120, -- width of the Zen window
+        width = 120,  -- width of the Zen window
         options = {
           -- You can disable native vim UI elements here:
           -- number = false,
