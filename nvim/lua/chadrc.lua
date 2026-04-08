@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "tokyodark",
+	theme = "bearded-arc",
 
 	hl_override = {
 		Normal = { bg = "none" },

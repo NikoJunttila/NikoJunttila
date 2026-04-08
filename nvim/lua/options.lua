@@ -45,6 +45,9 @@ o.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
 
+-- treesitter-based highlighting and indentation (built-in since nvim 0.12)
+vim.treesitter.language.register("markdown", "mdx")
+
 -- disable some default providers
 g.loaded_node_provider = 0
 g.loaded_python3_provider = 0

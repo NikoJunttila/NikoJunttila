@@ -52,12 +52,16 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
-    event = { "BufReadPost", "BufNewFile" },
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
-    opts = {
-      ensure_installed = {
+    config = function()
+      require("nvim-treesitter").setup {
+        install_dir = vim.fn.stdpath "data" .. "/site",
+      }
+
+      -- Auto-install parsers when entering a buffer
+      local parsers = {
         "vim",
         "lua",
         "vimdoc",
@@ -72,18 +76,23 @@ return {
         "templ",
         "markdown",
         "markdown_inline",
-      },
-      automatic_installation = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = {
-        enable = true,
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      }
+
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function()
+          local buf = vim.api.nvim_get_current_buf()
+          -- pcall to avoid errors if parser isn't available
+          pcall(vim.treesitter.start, buf)
+        end,
+      })
+
+      -- Install missing parsers on startup
+      local installed = require("nvim-treesitter").get_installed()
+      for _, lang in ipairs(parsers) do
+        if not vim.tbl_contains(installed, lang) then
+          vim.cmd("TSInstall " .. lang)
+        end
+      end
     end,
   },
 }
