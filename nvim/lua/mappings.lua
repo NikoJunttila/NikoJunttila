@@ -10,7 +10,9 @@ map("n", "ä", "0", { desc = "Jump to start of line" })
 map("n", "m", ":m +1 <CR>", { desc = "Move down" })
 map("n", "n", ":m -2 <CR>", { desc = "Move Up" })
 
-map("n", "<leader>lr", ":LspRestart <CR>", { desc = "Reset lsp" })
+map("n", "<leader>lr", "<cmd>lsp restart<CR>", { desc = "Restart LSP" })
+map("n", "<leader>ls", "<cmd>lsp stop<CR>", { desc = "Stop LSP" })
+map("n", "<leader>lh", "<cmd>checkhealth lsp<CR>", { desc = "LSP info/health" })
 
 -- Buffer management mappings
 map("n", "<leader>bx", function()
