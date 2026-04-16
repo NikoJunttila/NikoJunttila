@@ -30,13 +30,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
-
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# install plugins with .sh script provided
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting
   fzf
 )
 
@@ -57,6 +54,17 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+export VISUAL="nvim"
+export EDITOR="nvim"
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+chpwd() {
+  ls
+}
+
 typeset -U path PATH
 path=(
   $HOME/.local/kitty.app/bin
@@ -64,12 +72,15 @@ path=(
   $HOME/Odin
   $HOME/.local/bin
   /usr/lib/llvm-20/bin
+  $HOME/.terragrunt/bin
   $path
 )
+
+# shorter
 alias vim='nvim'
-alias ls='eza --icons --group-directories-first --color=auto'
 alias python='python3'
-alias m='make'
+alias or='odin run .'
+alias t='task'
 
 # safer rm
 alias rm='rm -I'
@@ -78,24 +89,35 @@ alias rm='rm -I'
 alias g='git'
 alias gs='git status'
 alias gl='git log --oneline --graph --decorate'
-
 alias lgtm='git add . && git commit -m "quick" && git push origin master'
 
+# tools
+alias ls='eza --icons --group-directories-first --color=auto'
 alias cat='bat'
 alias find='fd'
 alias grep='rg'
 alias cd='z'
 
+# suffix aliases
+alias -s go="$EDITOR"
+alias -s yaml="bat -l yaml"
+alias -s yml="bat -l yaml"
+
+# global aliases
+alias -g NE='2>/dev/null' # redirect errs
+# possibly add alias to copy results to clipboard
+
+alias diskusage='du -hd1 / NE'
+
 eval "$(zoxide init zsh)"
+eval "$(task --completion zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/usr/lib/llvm-20/bin:$PATH"
+
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export AWS_PROFILE=derp
-
 export OPENAI_API_KEY=
-
 export TAILSCALE_AUTHKEY=
-
 export TF_VAR_hcloud_token=
