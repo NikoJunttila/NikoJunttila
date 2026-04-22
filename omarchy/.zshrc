@@ -61,9 +61,7 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
-chpwd() {
-  ls
-}
+
 
 typeset -U path PATH
 path=(
@@ -111,6 +109,10 @@ alias diskusage='du -hd1 / NE'
 
 eval "$(zoxide init zsh)"
 eval "$(task --completion zsh)"
+
+chpwd() {
+  ls
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
