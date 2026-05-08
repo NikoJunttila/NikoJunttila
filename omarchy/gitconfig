@@ -1,0 +1,73 @@
+# See https://git-scm.com/docs/git-config
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+  lg = log --graph --decorate --pretty=oneline --abbrev-commit
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true 			 # Rebase (instead of merge) on pull
+[push]
+	autoSetupRemote = true   # Automatically set upstream branch on push
+[diff]
+	algorithm = histogram    # Clearer diffs on moved/edited lines
+	colorMoved = plain       # Highlight moved blocks in diffs
+	mnemonicPrefix = true    # More intuitive refs in diff output
+[commit]
+	verbose = true           # Include diff comment in commit message template
+[column]
+	ui = auto 			     # Output in columns when possible
+[branch]
+	sort = -committerdate    # Sort branches by most recent commit first
+[tag]
+	sort = -version:refname  # Sort version numbers as you would expect
+[rerere]
+	enabled = true           # Record and reuse conflict resolutions
+	autoupdate = true        # Apply stored conflict resolutions automatically
+[user]
+	name = nikojunttila
+	email = nikosamulijunttila@gmail.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+# delta configuration: https://github.com/dandavison/delta
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    side-by-side = true
+    navigate = true
+    line-numbers = true
+    syntax-theme = Dracula
+    plus-style = syntax "#003800"
+    minus-style = syntax "#3f0001"
+    hunk-header-style = file line-number syntax
+    hunk-header-decoration-style = blue ul
+    commit-decoration-style = yellow box ul
+    file-style = yellow bold
+    file-decoration-style = none
+    true-color = always
+    hyperlinks = true
+    hyperlinks-file-link-format = "file://{path}:{line}"
+
+[merge]
+    conflictStyle = zdiff3
+
+[diff]
+    colorMoved = default
+
+[delta "navigate"]
+    next-file = n
+    previous-file = N
+    next-hunk = j
+    previous-hunk = k
