@@ -1,5 +1,35 @@
 return {
   {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {
+      lsp = {
+        -- blink.cmp already provides signature help; vim.lsp.buf.hover() handles hover.
+        signature = { enabled = false },
+        hover = { enabled = false },
+      },
+      -- Snacks.notifier owns vim.notify; let noice stay out of the way.
+      notify = { enabled = false },
+      messages = { enabled = false },
+      presets = {
+        bottom_search = true,
+        command_palette = true,
+        long_message_to_split = true,
+      },
+      -- command_palette preset pins cmdline_popup near the top (row = 3);
+      -- recenter both the input box and the completion popup.
+      views = {
+        cmdline_popup = {
+          position = { row = "50%", col = "50%" },
+        },
+        cmdline_popupmenu = {
+          position = { row = "60%", col = "50%" },
+        },
+      },
+    },
+  },
+  {
     "folke/which-key.nvim",
     keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
     cmd = "WhichKey",
