@@ -58,10 +58,13 @@ return {
         -- List of directories and files to detect workspace root directory for Windsurf Chat
         root_dir = { ".bzr", ".git", ".hg", ".svn", "_FOSSIL_", "package.json" }
       })
-      -- create an autocommand which closes cmp when ai completions are displayed
+      -- close blink.cmp when neocodeium shows a suggestion so they don't overlap
       vim.api.nvim_create_autocmd("User", {
         pattern = "NeoCodeiumCompletionDisplayed",
-        callback = function() require("cmp").abort() end
+        callback = function()
+          local ok, blink = pcall(require, "blink.cmp")
+          if ok then blink.hide() end
+        end,
       })
 
       -- set up some sort of keymap to cycle and complete to trigger completion

@@ -28,7 +28,7 @@ M.on_init = function(client, _)
   end
 end
 
-M.capabilities = require("cmp_nvim_lsp").default_capabilities()
+M.capabilities = require("blink.cmp").get_lsp_capabilities()
 
 M.defaults = function()
   require("nvchad.lsp").diagnostic_config()

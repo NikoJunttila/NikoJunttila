@@ -1,75 +1,60 @@
-local function toggle_telescope(harpoon_files)
+local function harpoon_picker()
   local harpoon = require "harpoon"
-  local conf = require("telescope.config").values
-  local pickers = require "telescope.pickers"
-  local finders = require "telescope.finders"
-  local actions = require "telescope.actions"
-  local action_state = require "telescope.actions.state"
+  local list = harpoon:list()
 
-  local file_paths = {}
-  for _, item in ipairs(harpoon_files.items) do
-    table.insert(file_paths, item.value)
+  local items = {}
+  for i, item in ipairs(list.items) do
+    table.insert(items, {
+      idx = i,
+      text = item.value,
+      file = item.value,
+    })
   end
 
-  pickers
-    .new({}, {
-      prompt_title = "Harpoon",
-      finder = finders.new_table { results = file_paths },
-      previewer = conf.file_previewer {},
-      sorter = conf.generic_sorter {},
-      attach_mappings = function(prompt_bufnr, map)
-        local select = function()
-          local selection = action_state.get_selected_entry()
-          actions.close(prompt_bufnr)
-          for i, item in ipairs(harpoon_files.items) do
-            if item.value == selection.value then
-              harpoon:list():select(i)
-              return
-            end
-          end
+  Snacks.picker.pick {
+    source = "harpoon",
+    items = items,
+    format = "file",
+    title = "Harpoon",
+    layout = { preset = "select" },
+    confirm = function(picker, item)
+      picker:close()
+      if item then
+        harpoon:list():select(item.idx)
+      end
+    end,
+    actions = {
+      delete_harpoon = function(picker, item)
+        if not item then
+          return
         end
-        map("i", "<CR>", select)
-        map("n", "<CR>", select)
-
-        map({ "i", "n" }, "<C-d>", function()
-          local selection = action_state.get_selected_entry()
-          local removed_file = selection.value
-
-          for i, item in ipairs(harpoon_files.items) do
-            if item.value == selection.value then
-              harpoon:list():remove_at(i)
-              break
-            end
-          end
-
-          -- Reorder/normalize the list to fix indexing
-          local items = harpoon:list().items
-          harpoon:list():clear()
-          for _, item in ipairs(items) do
-            harpoon:list():add(item)
-          end
-
-          vim.notify("Removed from Harpoon: " .. removed_file, vim.log.levels.INFO)
-
-          actions.close(prompt_bufnr)
-          vim.schedule(function()
-            toggle_telescope(harpoon:list())
-          end)
-        end)
-        return true
+        local removed_file = item.file
+        harpoon:list():remove_at(item.idx)
+        local kept = harpoon:list().items
+        harpoon:list():clear()
+        for _, it in ipairs(kept) do
+          harpoon:list():add(it)
+        end
+        vim.notify("Removed from Harpoon: " .. removed_file, vim.log.levels.INFO)
+        picker:close()
+        vim.schedule(harpoon_picker)
       end,
-    })
-    :find()
+    },
+    win = {
+      input = {
+        keys = {
+          ["<C-d>"] = { "delete_harpoon", mode = { "n", "i" } },
+        },
+      },
+    },
+  }
 end
 
 return {
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
+    dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
       {
         "<leader>A",
@@ -80,13 +65,7 @@ return {
         end,
         desc = "Add file to Harpoon",
       },
-      {
-        "<C-e>",
-        function()
-          toggle_telescope(require("harpoon"):list())
-        end,
-        desc = "Open Harpoon Telescope menu",
-      },
+      { "<C-e>", harpoon_picker, desc = "Open Harpoon picker" },
       { "<C-1>", function() require("harpoon"):list():select(1) end, desc = "Harpoon to file 1" },
       { "<C-2>", function() require("harpoon"):list():select(2) end, desc = "Harpoon to file 2" },
       { "<C-3>", function() require("harpoon"):list():select(3) end, desc = "Harpoon to file 3" },

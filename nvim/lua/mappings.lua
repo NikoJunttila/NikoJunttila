@@ -100,53 +100,46 @@ end
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
--- nvimtree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+-- file explorer (snacks.explorer)
+map("n", "<C-n>", function() Snacks.explorer() end, { desc = "explorer toggle" })
+map("n", "<leader>e", function() Snacks.explorer.reveal() end, { desc = "explorer reveal current file" })
 
--- telescope
-map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
-map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
-map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
-map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
-map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
-map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
-map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
-map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
+-- pickers (snacks.picker)
+map("n", "<leader>fw", function() Snacks.picker.grep() end, { desc = "grep" })
+map("n", "<leader>fb", function() Snacks.picker.buffers() end, { desc = "buffers" })
+map("n", "<leader>fh", function() Snacks.picker.help() end, { desc = "help pages" })
+map("n", "<leader>ma", function() Snacks.picker.marks() end, { desc = "marks" })
+map("n", "<leader>fo", function() Snacks.picker.recent() end, { desc = "recent files" })
+map("n", "<leader>fz", function() Snacks.picker.lines() end, { desc = "buffer lines" })
+map("n", "<leader>cm", function() Snacks.picker.git_log() end, { desc = "git log" })
+map("n", "<leader>gt", function() Snacks.picker.git_status() end, { desc = "git status" })
+map("n", "<leader>ff", function() Snacks.picker.files() end, { desc = "find files" })
+map("n", "<leader>fa", function()
+  Snacks.picker.files { hidden = true, ignored = true, follow = true }
+end, { desc = "find files (hidden + ignored)" })
 
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-map(
-  "n",
-  "<leader>fa",
-  "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-  { desc = "telescope find all files" }
-)
-
--- terminal
+-- terminal (snacks.terminal)
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
--- new terminals
 map("n", "<leader>h", function()
-  require("nvchad.term").new { pos = "sp" }
-end, { desc = "terminal new horizontal term" })
+  Snacks.terminal.open(nil, { win = { position = "bottom" } })
+end, { desc = "new horizontal terminal" })
 
 map("n", "<leader>v", function()
-  require("nvchad.term").new { pos = "vsp" }
-end, { desc = "terminal new vertical term" })
+  Snacks.terminal.open(nil, { win = { position = "right" } })
+end, { desc = "new vertical terminal" })
 
--- toggleable
 map({ "n", "t" }, "<A-v>", function()
-  require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm" }
-end, { desc = "terminal toggleable vertical term" })
+  Snacks.terminal.toggle(nil, { win = { position = "right" }, count = 2 })
+end, { desc = "toggle vertical terminal" })
 
 map({ "n", "t" }, "<A-h>", function()
-  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
-end, { desc = "terminal toggleable horizontal term" })
+  Snacks.terminal.toggle(nil, { win = { position = "bottom" }, count = 1 })
+end, { desc = "toggle horizontal terminal" })
 
 map({ "n", "t" }, "<A-i>", function()
-  require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
-end, { desc = "terminal toggle floating term" })
+  Snacks.terminal.toggle(nil, { win = { position = "float" }, count = 3 })
+end, { desc = "toggle floating terminal" })
 
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
