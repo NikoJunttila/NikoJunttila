@@ -21,5 +21,4 @@ local options = {
   extensions = {},
 }
 
-dofile(vim.g.base46_cache .. "telescope")
 return options

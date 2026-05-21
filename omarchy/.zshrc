@@ -114,12 +114,19 @@ chpwd() {
   ls
 }
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export AWS_PROFILE=derp
-export OPENAI_API_KEY=
-export TAILSCALE_AUTHKEY=
-export TF_VAR_hcloud_token=
+# Secrets / API keys live outside the repo. See ./secrets-setup.sh.
+[[ -f "$HOME/.config/secrets/env" ]] && source "$HOME/.config/secrets/env"

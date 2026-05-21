@@ -2,17 +2,6 @@ return {
   "nvim-lua/plenary.nvim",
 
   {
-    "nvchad/base46",
-    lazy = false,
-    build = function()
-      require("base46").load_all_highlights()
-    end,
-    config = function()
-      require("base46").load_all_highlights()
-    end,
-  },
-
-  {
     "nvchad/ui",
     lazy = false,
     config = function()
@@ -27,7 +16,6 @@ return {
   {
     "nvim-tree/nvim-web-devicons",
     opts = function()
-      dofile(vim.g.base46_cache .. "devicons")
       return { override = require "nvchad.icons.devicons" }
     end,
   },
@@ -45,15 +33,9 @@ return {
       },
     },
     config = function(_, opts)
-      dofile(vim.g.base46_cache .. "blankline")
-
       local hooks = require "ibl.hooks"
       hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
       require("ibl").setup(opts)
-
-      -- Apply custom highlights AFTER base46 cache (which overwrites them)
-      vim.api.nvim_set_hl(0, "IblIndent", { fg = "#2a2b3d" })
-      vim.api.nvim_set_hl(0, "IblScope", { fg = "#4ebfe3", bold = true })
     end,
   },
 

@@ -13,7 +13,6 @@
         "library": [
             "$VIMRUNTIME/lua",
             "/home/derp/.local/share/nvim/lazy/NvChad/lua",
-            "/home/derp/.local/share/nvim/lazy/base46/lua",
             "/home/derp/.local/share/nvim/lazy/ui/lua",
             "/home/derp/.local/share/nvim/lazy/ui/nvchad_types",
             "/home/derp/.local/share/nvim/lazy/lazy.nvim/lua",

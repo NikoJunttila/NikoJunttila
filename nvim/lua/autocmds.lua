@@ -25,3 +25,53 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
     end
   end,
 })
+
+-- Re-apply transparency on every colorscheme change so it survives Omarchy
+-- theme switches.
+local transparent_groups = {
+  "Normal",
+  "NormalFloat",
+  "FloatBorder",
+  "Pmenu",
+  "Terminal",
+  "EndOfBuffer",
+  "FoldColumn",
+  "Folded",
+  "SignColumn",
+  "NormalNC",
+  "WhichKeyFloat",
+  "NeoTreeNormal",
+  "NeoTreeNormalNC",
+  "NeoTreeVertSplit",
+  "NeoTreeWinSeparator",
+  "NeoTreeEndOfBuffer",
+  "NvimTreeNormal",
+  "NvimTreeVertSplit",
+  "NvimTreeEndOfBuffer",
+  "NotifyINFOBody",
+  "NotifyERRORBody",
+  "NotifyWARNBody",
+  "NotifyTRACEBody",
+  "NotifyDEBUGBody",
+  "NotifyINFOTitle",
+  "NotifyERRORTitle",
+  "NotifyWARNTitle",
+  "NotifyTRACETitle",
+  "NotifyDEBUGTitle",
+  "NotifyINFOBorder",
+  "NotifyERRORBorder",
+  "NotifyWARNBorder",
+  "NotifyTRACEBorder",
+  "NotifyDEBUGBorder",
+}
+
+autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("OmarchyTransparency", { clear = true }),
+  callback = function()
+    for _, group in ipairs(transparent_groups) do
+      vim.api.nvim_set_hl(0, group, { bg = "none" })
+    end
+    vim.api.nvim_set_hl(0, "IblIndent", { fg = "#2a2b3d", bg = "none" })
+    vim.api.nvim_set_hl(0, "IblScope", { fg = "#4ebfe3", bg = "none", bold = true })
+  end,
+})
