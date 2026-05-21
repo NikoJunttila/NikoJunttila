@@ -28,6 +28,8 @@ return {
         "ts_ls", -- changed from tsserver
         "svelte",
         "templ",
+        "lua_ls",
+        "pyright",
       },
       automatic_installation = true,
     },

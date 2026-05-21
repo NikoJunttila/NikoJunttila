@@ -15,6 +15,7 @@ declare -A LINKS=(
   ["hypridle.conf"]="$HOME/.config/hypr/hypridle.conf"
   ["input.conf"]="$HOME/.config/hypr/input.conf"
   ["kitty.conf"]="$HOME/.config/kitty/kitty.conf"
+  ["ghostty.conf"]="$HOME/.config/ghostty/config"
 )
 
 link_one() {

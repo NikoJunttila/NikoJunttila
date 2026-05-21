@@ -63,7 +63,7 @@ M.defaults = function()
     end,
   })
 
-  local servers = { "html", "cssls", "gopls", "ols", "clangd", "ts_ls", "svelte", "templ" }
+  local servers = { "html", "cssls", "gopls", "ols", "clangd", "ts_ls", "svelte", "templ", "pyright" }
   vim.lsp.enable(servers)
 
   local lua_lsp_settings = {
