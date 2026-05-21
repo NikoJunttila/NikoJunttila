@@ -28,19 +28,6 @@
 
 ---
 
-## 📊 GitHub Statistics
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=NikoJunttila&show_icons=true&theme=radical&bg_color=0d1117&title_color=ff6b6b&icon_color=79dafa&text_color=c9d1d9&border_color=30363d" alt="Niko's GitHub Stats" height="165">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=NikoJunttila&layout=compact&theme=radical&bg_color=0d1117&title_color=ff6b6b&text_color=c9d1d9&border_color=30363d" alt="Top Languages" height="165">
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=NikoJunttila&theme=radical&background=0d1117&stroke=30363d&ring=ff6b6b&fire=ff6b6b&currStreakNum=c9d1d9&sideNums=c9d1d9&currStreakLabel=ff6b6b&sideLabels=c9d1d9&dates=c9d1d9" alt="GitHub Streak">
-</div>
-
----
-
 ## 🛠 Tech Stack
 
 <div align="center">
@@ -52,37 +39,6 @@
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-257bd6?style=for-the-badge&logo=docker&logoColor=white)
 
-</div>
-
----
-
-## 🌟 Featured Projects
-
-<div align="center">
-  <a href="https://github.com/NikoJunttila/CVwebsite">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=CVwebsite&theme=radical&bg_color=0d1117&title_color=ff6b6b&text_color=c9d1d9&border_color=30363d" />
-  </a>
-  <a href="https://github.com/NikoJunttila/TPX-discordbot">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=TPX-discordbot&theme=radical&bg_color=0d1117&title_color=ff6b6b&text_color=c9d1d9&border_color=30363d" />
-  </a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/NikoJunttila/userAnalytics">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=userAnalytics&theme=radical&bg_color=0d1117&title_color=ff6b6b&text_color=c9d1d9&border_color=30363d" />
-  </a>
-  <a href="https://github.com/NikoJunttila/headerCheck">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=headerCheck&theme=radical&bg_color=0d1117&title_color=ff6b6b&text_color=c9d1d9&border_color=30363d" />
-  </a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/NikoJunttila/Calendar-app">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=Calendar-app&theme=radical&bg_color=0d1117&title_color=ff6b6b&text_color=c9d1d9&border_color=30363d" />
-  </a>
-    <a href="https://github.com/NikoJunttila/sveltekit-vendure-storefront">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=NikoJunttila&repo=sveltekit-vendure-storefront&theme=radical&bg_color=0d1117&title_color=ff6b6b&text_color=c9d1d9&border_color=30363d" />
-  </a>
 </div>
 
 ---
