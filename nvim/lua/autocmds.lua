@@ -40,11 +40,6 @@ local transparent_groups = {
   "SignColumn",
   "NormalNC",
   "WhichKeyFloat",
-  "NeoTreeNormal",
-  "NeoTreeNormalNC",
-  "NeoTreeVertSplit",
-  "NeoTreeWinSeparator",
-  "NeoTreeEndOfBuffer",
   "NvimTreeNormal",
   "NvimTreeVertSplit",
   "NvimTreeEndOfBuffer",
@@ -170,6 +165,38 @@ local function style_cheatsheet()
   end
 end
 
+-- Style NvChad's tabufline so the currently focused buffer stands out.
+local function style_tabufline()
+  local function hl(name)
+    return vim.api.nvim_get_hl(0, { name = name, link = false }) or {}
+  end
+  local function fg(name, fallback)
+    return hl(name).fg or fallback
+  end
+
+  local normal = hl "Normal"
+  local normal_bg = normal.bg or "#1e1e2e"
+  local normal_fg = normal.fg or "#cdd6f4"
+  local dim_fg = fg("Comment", "#7f849c")
+  local inactive_bg = hl("CursorLine").bg or hl("ColorColumn").bg or normal_bg
+  local accent = fg("Function", "#89b4fa")
+
+  -- Active buffer: bright accent bar with normal fg.
+  vim.api.nvim_set_hl(0, "TbBufOn", { fg = normal_fg, bg = inactive_bg, bold = true })
+  vim.api.nvim_set_hl(0, "TbBufOnClose", { fg = fg("DiagnosticError", "#f38ba8"), bg = inactive_bg })
+  vim.api.nvim_set_hl(0, "TbBufOnModified", { fg = fg("WarningMsg", "#f9e2af"), bg = inactive_bg })
+
+  -- Inactive buffers: dim fg on the tabline background.
+  vim.api.nvim_set_hl(0, "TbBufOff", { fg = dim_fg, bg = "NONE" })
+  vim.api.nvim_set_hl(0, "TbBufOffClose", { fg = dim_fg, bg = "NONE" })
+  vim.api.nvim_set_hl(0, "TbBufOffModified", { fg = fg("WarningMsg", "#f9e2af"), bg = "NONE" })
+
+  -- Accent strip on the left edge of the active tab to make it pop.
+  vim.api.nvim_set_hl(0, "TbBufOnIndicator", { fg = accent, bg = inactive_bg, bold = true })
+
+  vim.api.nvim_set_hl(0, "TbFill", { bg = "NONE" })
+end
+
 autocmd("ColorScheme", {
   group = vim.api.nvim_create_augroup("OmarchyTransparency", { clear = true }),
   callback = function()
@@ -180,5 +207,6 @@ autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "IblScope", { fg = "#4ebfe3", bg = "none", bold = true })
     style_statusline()
     style_cheatsheet()
+    style_tabufline()
   end,
 })

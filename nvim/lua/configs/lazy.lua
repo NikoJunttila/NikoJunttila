@@ -1,6 +1,6 @@
 return {
   defaults = { lazy = true },
-  install = { colorscheme = { "nvchad" } },
+  install = { colorscheme = { vim.g.omarchy_colorscheme or "habamax" } },
 
   ui = {
     icons = {

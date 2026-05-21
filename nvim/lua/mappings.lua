@@ -7,8 +7,8 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "ö", "$", { desc = "Jump to end of line" })
 map("n", "ä", "0", { desc = "Jump to start of line" })
 
-map("n", "m", ":m +1 <CR>", { desc = "Move down" })
-map("n", "n", ":m -2 <CR>", { desc = "Move Up" })
+map("n", "<A-m>", ":m +1 <CR>", { desc = "Move line down" })
+map("n", "<A-n>", ":m -2 <CR>", { desc = "Move line up" })
 
 map("n", "<leader>lr", "<cmd>lsp restart<CR>", { desc = "Restart LSP" })
 map("n", "<leader>ls", "<cmd>lsp stop<CR>", { desc = "Stop LSP" })
@@ -43,7 +43,8 @@ map("i", "<C-l>", "<Right>", { desc = "Move right in insert mode" })
 
 -- Visual mode (v)
 -- For selecting text.
-map("v", "n", ":m -2 <CR>", { desc = "Move Up" })
+map("v", "<A-n>", ":m -2 <CR>", { desc = "Move line up" })
+map("v", "<A-m>", ":m +1 <CR>", { desc = "Move line down" })
 map("v", "ö", "$", { desc = "Jump to end of line" })
 map("v", "ä", "0", { desc = "Jump to start of line" })
 
@@ -65,7 +66,7 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
-map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
+map("n", "<leader>tn", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 
@@ -113,10 +114,6 @@ map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = 
 map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
 map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
-
-map("n", "<leader>th", function()
-  require("nvchad.themes").open()
-end, { desc = "telescope nvchad themes" })
 
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map(

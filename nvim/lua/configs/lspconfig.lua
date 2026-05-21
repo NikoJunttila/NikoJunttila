@@ -23,36 +23,12 @@ end
 
 -- disable semanticTokens
 M.on_init = function(client, _)
-  if vim.fn.has "nvim-0.11" ~= 1 then
-    if client.supports_method "textDocument/semanticTokens" then
-      client.server_capabilities.semanticTokensProvider = nil
-    end
-  else
-    if client:supports_method "textDocument/semanticTokens" then
-      client.server_capabilities.semanticTokensProvider = nil
-    end
+  if client:supports_method "textDocument/semanticTokens" then
+    client.server_capabilities.semanticTokensProvider = nil
   end
 end
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-
-M.capabilities.textDocument.completion.completionItem = {
-  documentationFormat = { "markdown", "plaintext" },
-  snippetSupport = true,
-  preselectSupport = true,
-  insertReplaceSupport = true,
-  labelDetailsSupport = true,
-  deprecatedSupport = true,
-  commitCharactersSupport = true,
-  tagSupport = { valueSet = { 1 } },
-  resolveSupport = {
-    properties = {
-      "documentation",
-      "detail",
-      "additionalTextEdits",
-    },
-  },
-}
+M.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 M.defaults = function()
   require("nvchad.lsp").diagnostic_config()
