@@ -23,8 +23,11 @@ return {
         markdown = {
           enabled = true,
           clear_in_insert_mode = false,
-          download_remote_images = true,
-          only_render_image_at_cursor = false,
+          -- Workaround for ImageMagick's SVG delegate calling inkscape (Gio::DBus
+          -- crash on this machine). Skip remote downloads + only process the
+          -- image under the cursor to shrink the blast radius.
+          download_remote_images = false,
+          only_render_image_at_cursor = true,
           only_render_image_at_cursor_mode = "popup",
           floating_windows = false,
           filetypes = { "markdown", "vimwiki" },

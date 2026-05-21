@@ -15,18 +15,8 @@ map("n", "<leader>ls", "<cmd>lsp stop<CR>", { desc = "Stop LSP" })
 map("n", "<leader>lh", "<cmd>checkhealth lsp<CR>", { desc = "LSP info/health" })
 
 -- Buffer management mappings
-map("n", "<leader>bx", function()
-  local ok = pcall(function()
-    vim.cmd "bufdo bd"
-  end)
-  if not ok then
-    vim.notify("Some buffers have unsaved changes!", vim.log.levels.WARN)
-  end
-end, { desc = "Close all buffers (safe)" })
-
-map("n", "<leader>bo", function()
-  vim.cmd "%bd|e#|bd#"
-end, { desc = "Close all buffers except current" })
+map("n", "<leader>bx", function() Snacks.bufdelete.all() end, { desc = "Close all buffers" })
+map("n", "<leader>bo", function() Snacks.bufdelete.other() end, { desc = "Close all buffers except current" })
 
 -- Additional custom mappings
 map("n", "<leader>ee", function()
@@ -36,7 +26,6 @@ end, { desc = "Insert Go error check" })
 -- Insert mode (i)
 -- For typing text, like a normal editor.
 map("i", "jk", "<ESC>")
-map("i", "<C-h>", "<Left>")
 map("i", "<C-j>", "<Down>", { desc = "Move down in insert mode" })
 map("i", "<C-k>", "<Up>", { desc = "Move up in insert mode" })
 map("i", "<C-l>", "<Right>", { desc = "Move right in insert mode" })
@@ -64,7 +53,6 @@ map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
-map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
 map("n", "<leader>tn", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
@@ -77,7 +65,7 @@ end, { desc = "general format file" })
 
 map("n", "<leader>ra", require "nvchad.lsp.renamer", { desc = "NvRenamer" })
 -- global lsp mappings
-map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
+map("n", "<leader>ds", function() Snacks.picker.diagnostics() end, { desc = "LSP diagnostics picker" })
 
 -- tabufline
 if require("nvconfig").ui.tabufline.enabled then
@@ -91,9 +79,7 @@ if require("nvconfig").ui.tabufline.enabled then
     require("nvchad.tabufline").prev()
   end, { desc = "buffer goto prev" })
 
-  map("n", "<leader>x", function()
-    require("nvchad.tabufline").close_buffer()
-  end, { desc = "buffer close" })
+  map("n", "<leader>x", function() Snacks.bufdelete() end, { desc = "buffer close" })
 end
 
 -- Comment
