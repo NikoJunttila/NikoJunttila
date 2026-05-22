@@ -5,10 +5,11 @@
 -- We install the colorscheme plugin via lazy.nvim and stash the colorscheme
 -- name in vim.g.omarchy_colorscheme; init.lua applies it after lazy.setup.
 --
--- If Omarchy is not installed on this machine, fall back to a built-in
--- colorscheme so the config still works.
+-- If Omarchy is not installed on this machine, fall back to tokyonight
+-- and install the plugin so the config still works with a nice theme.
 
-local FALLBACK_COLORSCHEME = "habamax"
+local FALLBACK_COLORSCHEME = "tokyonight-moon"
+local FALLBACK_SPEC = { "folke/tokyonight.nvim", lazy = false, priority = 1000 }
 local omarchy_file = vim.fn.expand "~/.config/omarchy/current/theme/neovim.lua"
 local specs = {}
 
@@ -31,6 +32,7 @@ end
 
 if not vim.g.omarchy_colorscheme then
   vim.g.omarchy_colorscheme = FALLBACK_COLORSCHEME
+  table.insert(specs, FALLBACK_SPEC)
 end
 
 return specs
