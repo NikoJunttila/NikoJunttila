@@ -66,7 +66,7 @@
   <tr>
     <td><a href="https://esanverhoilu.fi/">🪑 Upholstery Business</a></td>
     <td>Entrepreneur website</td>
-    <td>Next.js</td>
+    <td>Sveltekit</td>
   </tr>
   <tr>
     <td><a href="https://hyvinvointikeskusluxus.com/">🛍️ Wellness Store</a></td>

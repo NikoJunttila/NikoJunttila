@@ -43,7 +43,7 @@ Keybinds:
 
 | Key       | Action                        |
 | --------- | ----------------------------- |
-| `<A-e>`   | Start AI / cycle suggestions  |
+| `<A-c>`   | Start AI / cycle suggestions  |
 | `<A-f>`   | Accept suggestion             |
 
 ## Mermaid Charts
