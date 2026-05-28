@@ -106,6 +106,7 @@ alias -g NE='2>/dev/null' # redirect errs
 # possibly add alias to copy results to clipboard
 
 alias diskusage='du -hd1 / NE'
+alias image="identify"
 
 eval "$(zoxide init zsh)"
 eval "$(task --completion zsh)"
