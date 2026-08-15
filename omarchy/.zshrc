@@ -70,7 +70,8 @@ path=(
   $HOME/Odin
   $HOME/.local/bin
   /usr/lib/llvm-20/bin
-  $HOME/.terragrunt/bin
+  /.terragrunt/bin
+  $HOME/code/sdk-garmin/bin
   $path
 )
 
@@ -108,8 +109,6 @@ alias -g NE='2>/dev/null' # redirect errs
 alias diskusage='du -hd1 / NE'
 alias image="identify"
 
-eval "$(zoxide init zsh)"
-eval "$(task --completion zsh)"
 
 chpwd() {
   ls
@@ -131,3 +130,6 @@ source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-sy
 
 # Secrets / API keys live outside the repo. See ./secrets-setup.sh.
 [[ -f "$HOME/.config/secrets/env" ]] && source "$HOME/.config/secrets/env"
+
+eval "$(zoxide init zsh)"
+eval "$(task --completion zsh)"
