@@ -11,11 +11,10 @@ STAMP="$(date +%Y%m%d-%H%M%S)"
 declare -A LINKS=(
   [".zshrc"]="$HOME/.zshrc"
   ["gitconfig"]="$HOME/.config/git/config"
-  ["bindings.conf"]="$HOME/.config/hypr/bindings.conf"
+  ["bindings.lua"]="$HOME/.config/hypr/bindings.lua"
   ["hypridle.conf"]="$HOME/.config/hypr/hypridle.conf"
-  ["input.conf"]="$HOME/.config/hypr/input.conf"
+  ["input.lua"]="$HOME/.config/hypr/input.lua"
   ["kitty.conf"]="$HOME/.config/kitty/kitty.conf"
-  ["ghostty.conf"]="$HOME/.config/ghostty/config"
 )
 
 link_one() {
