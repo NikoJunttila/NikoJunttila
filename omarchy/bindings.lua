@@ -42,7 +42,11 @@ o.bind("SUPER + D", "Launch apps", "omarchy-menu toggle apps")
 
 -- SUPER+SHIFT+W is the Omarchy 4 default for "Omawrite"; restore custom RDP bind.
 hl.unbind("SUPER + SHIFT + W")
-o.bind("SUPER + SHIFT + W", "Windows RDP", "sdl-freerdp3 /u:bill /p:gates /v:127.0.0.1:3389 /cert:ignore /size:1920x1080 /sound")
+o.bind(
+	"SUPER + SHIFT + W",
+	"Windows RDP",
+	"sdl-freerdp3 /u:bill /p:gates /v:127.0.0.1:3389 /cert:ignore /size:1920x1080 /sound"
+)
 
 -- SUPER+SHIFT+A is the Omarchy 4 default for "ChatGPT"; restore audio panel toggle.
 hl.unbind("SUPER + SHIFT + A")
