@@ -14,6 +14,8 @@ PLUGINS_DIR="$HOME/.config/omarchy/plugins"
 # plugin-id -> git repo url
 declare -A PLUGINS=(
   [omarchy-lock-style]="https://github.com/MrDemonc/Omarchy-lock-style.git"
+  [bibek.ytdl]="https://github.com/BibekBhusal0/omarchy-ytdl.git"
+  [io.github.tallsam.navbar-cat]="https://github.com/tallsam/omarchy-navbar-cat.git"
 )
 
 mkdir -p "$PLUGINS_DIR"

@@ -35,6 +35,9 @@
           "id": "omarchy.tray"
         },
         {
+          "id": "bibek.ytdl"
+        },
+        {
           "id": "omarchy-lock-style"
         },
         {
@@ -64,7 +67,12 @@
     "lock": 300,
     "screensaver": 150
   },
-  "plugins": [],
+  "plugins": [
+    {
+      "id": "io.github.tallsam.navbar-cat",
+      "character": "neko"
+    }
+  ],
   "version": 1,
   "disabledPlugins": [
     "omarchy.lock"
