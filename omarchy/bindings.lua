@@ -34,7 +34,7 @@
 -- SUPER+W is the Omarchy 4 default for "Close window"; restore custom Browser bind.
 -- (Kill window is intentionally bound to SUPER+Q below instead.)
 hl.unbind("SUPER + W")
-o.bind("SUPER + W", "Browser", { omarchy = "browser" })
+o.bind("SUPER + W", "Browser", "uwsm-app -- brave")
 
 o.bind("SUPER + Q", "Kill window", hl.dsp.window.close())
 
