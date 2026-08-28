@@ -36,6 +36,8 @@
 hl.unbind("SUPER + W")
 o.bind("SUPER + W", "Browser", "uwsm-app -- brave")
 
+hl.unbind("SUPER + CTRL + D")
+o.bind("SUPER + CTRL + D", "Toggle Wayscriber", "wayscriber --daemon-toggle")
 o.bind("SUPER + Q", "Kill window", hl.dsp.window.close())
 
 o.bind("SUPER + D", "Launch apps", "omarchy-menu toggle apps")
