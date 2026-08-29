@@ -63,3 +63,10 @@ hl.unbind("SUPER + SHIFT + S")
 o.bind("SUPER + SHIFT + S", "Screenshot with editing", "omarchy-capture-screenshot")
 
 o.bind("SUPER + SHIFT + R", "ratty", "ratty")
+
+-- Workspace overview (moorgrove.overview shell plugin, see omarchy_plugins.sh).
+-- SUPER+TAB is the Omarchy default for "Next workspace"; replaced with the overview.
+-- Bound here by hand because the plugin's settings sheet won't write through
+-- the bindings.lua symlink.
+hl.unbind("SUPER + TAB")
+o.bind("SUPER + TAB", "Workspace overview", "omarchy-shell shell toggle moorgrove.overview")

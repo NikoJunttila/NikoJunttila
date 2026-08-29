@@ -28,11 +28,17 @@
         },
         {
           "id": "omarchy.workspaces"
+        },
+        {
+          "id": "moorgrove.overview"
         }
       ],
       "right": [
         {
           "id": "omarchy.tray"
+        },
+        {
+          "id": "io.github.elevate08.qs-bitwarden-cli"
         },
         {
           "id": "bibek.ytdl"
@@ -70,7 +76,7 @@
   "plugins": [
     {
       "id": "io.github.tallsam.navbar-cat",
-      "character": "neko"
+      "character": "tora"
     }
   ],
   "version": 1,

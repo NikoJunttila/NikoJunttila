@@ -58,6 +58,14 @@ where they sit in the bar, so once a plugin is cloned it shows up on the next
 --enable --restart` when present, for plugins that patch `shell.json`
 themselves on install.
 
+Tracked plugins worth knowing about:
+
+- `moorgrove.overview` ([omarchy-overview](https://github.com/itsmoorgrove/omarchy-overview)) —
+  workspace overview with live window previews and a bar icon. Toggled with
+  `SUPER + TAB` in `bindings.lua` (replaces Omarchy's default "Next workspace").
+  Its settings sheet can't write a shortcut through the `bindings.lua` symlink,
+  so keep the bind in `bindings.lua` by hand.
+
 To add a plugin: install it normally (per its own instructions), confirm it
 works, then add `[plugin-id]="<git-clone-url>"` to the `PLUGINS` array here.
 The `plugin-id` must match the folder name it installs under (and the `id`

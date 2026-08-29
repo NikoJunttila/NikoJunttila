@@ -16,6 +16,9 @@ declare -A PLUGINS=(
   [omarchy-lock-style]="https://github.com/MrDemonc/Omarchy-lock-style.git"
   [bibek.ytdl]="https://github.com/BibekBhusal0/omarchy-ytdl.git"
   [io.github.tallsam.navbar-cat]="https://github.com/tallsam/omarchy-navbar-cat.git"
+  [io.github.elevate08.qs-bitwarden-cli]="https://github.com/Elevate08/qs-bitwarden-cli.git"
+  # Workspace overview overlay + bar icon; toggled with SUPER+TAB (bindings.lua)
+  [moorgrove.overview]="https://github.com/itsmoorgrove/omarchy-overview.git"
 )
 
 mkdir -p "$PLUGINS_DIR"
