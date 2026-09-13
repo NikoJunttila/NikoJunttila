@@ -64,16 +64,17 @@ bindkey '^x^e' edit-command-line
 
 
 typeset -U path PATH
-path=(
-  $HOME/.local/kitty.app/bin
-  $HOME/go/bin
-  $HOME/Odin
-  $HOME/.local/bin
-  /usr/lib/llvm-20/bin
-  /.terragrunt/bin
-  $HOME/code/sdk-garmin/bin
-  $path
-)
+# Prepend in reverse order so the final order matches the intended priority.
+for dir in \
+  "$HOME/code/sdk-garmin/bin" \
+  "/.terragrunt/bin" \
+  "/usr/lib/llvm-20/bin" \
+  "$HOME/.local/bin" \
+  "$HOME/Odin" \
+  "$HOME/go/bin" \
+  "$HOME/.local/kitty.app/bin"; do
+  [[ -d "$dir" ]] && path=("$dir" $path)
+done
 
 # shorter
 alias vim='nvim'
@@ -95,7 +96,6 @@ alias ls='eza --icons --group-directories-first --color=auto'
 alias cat='bat'
 alias find='fd'
 alias grep='rg'
-alias cd='z'
 
 # suffix aliases
 alias -s go="$EDITOR"
@@ -131,5 +131,11 @@ source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-sy
 # Secrets / API keys live outside the repo. See ./secrets-setup.sh.
 [[ -f "$HOME/.config/secrets/env" ]] && source "$HOME/.config/secrets/env"
 
-eval "$(zoxide init zsh)"
-eval "$(task --completion zsh)"
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+  alias cd='z'
+fi
+
+if command -v task >/dev/null 2>&1; then
+  eval "$(task --completion zsh)"
+fi

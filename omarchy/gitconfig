@@ -63,9 +63,6 @@
 [merge]
     conflictStyle = zdiff3
 
-[diff]
-    colorMoved = default
-
 [delta "navigate"]
     next-file = n
     previous-file = N

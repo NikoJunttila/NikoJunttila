@@ -12,7 +12,6 @@ declare -A LINKS=(
   [".zshrc"]="$HOME/.zshrc"
   ["gitconfig"]="$HOME/.config/git/config"
   ["bindings.lua"]="$HOME/.config/hypr/bindings.lua"
-  ["hypridle.conf"]="$HOME/.config/hypr/hypridle.conf"
   ["input.lua"]="$HOME/.config/hypr/input.lua"
   ["kitty.conf"]="$HOME/.config/kitty/kitty.conf"
   ["shell.json"]="$HOME/.config/omarchy/shell.json"

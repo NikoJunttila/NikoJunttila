@@ -12,7 +12,6 @@ directly at its live location.
 | `gitconfig` | `~/.config/git/config` | Git aliases and defaults |
 | `bindings.lua` | `~/.config/hypr/bindings.lua` | Hyprland keybinding overrides |
 | `input.lua` | `~/.config/hypr/input.lua` | Keyboard layout / input overrides |
-| `hypridle.conf` | `~/.config/hypr/hypridle.conf` | Idle/lock/screensaver timeouts |
 | `kitty.conf` | `~/.config/kitty/kitty.conf` | Kitty terminal config |
 | `shell.json` | `~/.config/omarchy/shell.json` | Omarchy bar layout, idle settings, enabled plugins |
 

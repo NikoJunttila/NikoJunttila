@@ -70,8 +70,8 @@
     "transparent": true
   },
   "idle": {
-    "lock": 300,
-    "screensaver": 150
+    "lock": 9000,
+    "screensaver": 6000
   },
   "plugins": [
     {
