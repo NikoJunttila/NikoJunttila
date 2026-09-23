@@ -1,70 +1,100 @@
-# See https://git-scm.com/docs/git-config
-
 [alias]
 	co = checkout
 	br = branch
 	ci = commit
 	st = status
-  lg = log --graph --decorate --pretty=oneline --abbrev-commit
+	lg = log --graph --decorate --pretty=oneline --abbrev-commit
+	history = log --oneline --graph --decorate --all   # Like lg, but across all branches
+
 [init]
 	defaultBranch = master
+
 [pull]
-	rebase = true 			 # Rebase (instead of merge) on pull
+	rebase = true            # Rebase (instead of merge) on pull
+
 [push]
-	autoSetupRemote = true   # Automatically set upstream branch on push
+	autoSetupRemote = true   # First push of a new branch sets upstream automatically (no --set-upstream needed)
+	followTags = true        # Also push annotated tags that point at the pushed commits
+
+[fetch]
+	prune = true             # Delete remote-tracking branches that no longer exist on the remote
+	pruneTags = true         # Same for tags
+	all = true               # Fetch from all remotes, not just origin
+
 [diff]
 	algorithm = histogram    # Clearer diffs on moved/edited lines
-	colorMoved = plain       # Highlight moved blocks in diffs
-	mnemonicPrefix = true    # More intuitive refs in diff output
+	colorMoved = default     # Highlight moved blocks in diffs (dimmed/zebra coloring)
+	mnemonicPrefix = true    # Use i/ w/ c/ prefixes (index, worktree, commit) instead of a/ b/
+	renames = true           # Detect renamed files in diffs
+  colorMoved = default
+
 [commit]
-	verbose = true           # Include diff comment in commit message template
+	verbose = true           # Show the diff in the editor while writing the message (not included in the commit)
+	template = ~/.gitmessage
+
 [column]
-	ui = auto 			     # Output in columns when possible
+	ui = auto                # Show branch/tag/status lists in columns when output is a terminal
+
 [branch]
-	sort = -committerdate    # Sort branches by most recent commit first
+	sort = -committerdate    # `git branch` lists most recently committed branches first
+
 [tag]
-	sort = -version:refname  # Sort version numbers as you would expect
-[rerere]
-	enabled = true           # Record and reuse conflict resolutions
-	autoupdate = true        # Apply stored conflict resolutions automatically
-[user]
-	name = nikojunttila
-	email = nikosamulijunttila@gmail.com
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-
-# delta configuration: https://github.com/dandavison/delta
-[core]
-    pager = delta
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    side-by-side = true
-    navigate = true
-    line-numbers = true
-    syntax-theme = Dracula
-    plus-style = syntax "#003800"
-    minus-style = syntax "#3f0001"
-    hunk-header-style = file line-number syntax
-    hunk-header-decoration-style = blue ul
-    commit-decoration-style = yellow box ul
-    file-style = yellow bold
-    file-decoration-style = none
-    true-color = always
-    hyperlinks = true
-    hyperlinks-file-link-format = "file://{path}:{line}"
+	sort = version:refname   # Sort tags as versions (v1.10 after v1.9, not before v1.2)
 
 [merge]
-    conflictStyle = zdiff3
+	conflictStyle = zdiff3   # Conflict markers also show the common ancestor, with shared lines trimmed
+
+[rerere]
+	enabled = true           # Record and reuse conflict resolutions
+	autoupdate = true        # Stage files resolved by rerere automatically
+
+[rebase]
+	autoSquash = true        # Auto-arrange fixup!/squash! commits during rebase
+	autoStash = true         # Stash uncommitted changes before rebase, restore after
+	updateRefs = true        # Move stacked branches along when rebasing the branch on top
+
+[help]
+	autocorrect = prompt     # On a typo'd command, suggest the fix and ask before running it
+
+[user]
+	email = niko.junttila@hur.fi
+	name = niko.junttila
+
+# Use the GitHub CLI for auth. The empty `helper =` clears any
+# previously configured helpers so only gh is used for these hosts.
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+
+[core]
+	pager = delta
+	excludesfile = /home/it-niko-lpt/.gitignore   # Global gitignore for all repos
+
+# delta configuration: https://github.com/dandavison/delta
+[interactive]
+	diffFilter = delta --color-only   # Use delta coloring in `git add -p` and friends
+
+[delta]
+	side-by-side = true
+	navigate = true          # Jump between files/hunks with n / N in the pager
+	line-numbers = true
+	syntax-theme = Dracula
+	plus-style = syntax "#003800"
+	minus-style = syntax "#3f0001"
+	hunk-header-style = file line-number syntax
+	hunk-header-decoration-style = blue ul
+	commit-decoration-style = yellow box ul
+	file-style = yellow bold
+	file-decoration-style = none
+	true-color = always
+	hyperlinks = true        # Make file paths/line numbers clickable in supporting terminals
+	hyperlinks-file-link-format = "file://{path}:{line}"
 
 [delta "navigate"]
-    next-file = n
-    previous-file = N
-    next-hunk = j
-    previous-hunk = k
+	next-file = n
+	previous-file = N
+	next-hunk = j
+	previous-hunk = k
