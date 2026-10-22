@@ -70,3 +70,9 @@ o.bind("SUPER + SHIFT + R", "ratty", "ratty")
 -- the bindings.lua symlink.
 hl.unbind("SUPER + TAB")
 o.bind("SUPER + TAB", "Workspace overview", "omarchy-shell shell toggle moorgrove.overview")
+
+-- GIF picker (derp.gifs shell plugin).
+-- SUPER+G is the Omarchy default for "Toggle window grouping"; replaced with
+-- the picker. Delete these two lines to get window grouping back.
+hl.unbind("SUPER + G")
+o.bind("SUPER + G", "GIF picker", "omarchy-shell shell summon derp.gifs")
