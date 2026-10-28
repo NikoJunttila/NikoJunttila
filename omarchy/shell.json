@@ -1,18 +1,18 @@
 {
   "bar": {
-    "centerAnchor": "omarchy.clock",
+    "centerAnchor": "derp.clock",
     "layout": {
       "center": [
-        {
-          "id": "omarchy.indicators"
-        },
         {
           "id": "omarchy.keyboard-layout"
         },
         {
+          "id": "omarchy.indicators"
+        },
+        {
           "format": "dddd HH:mm",
           "formatAlt": "d MMMM 'W'ww yyyy",
-          "id": "omarchy.clock",
+          "id": "derp.clock",
           "verticalFormat": "HH\n—\nmm"
         },
         {
@@ -30,6 +30,14 @@
           "id": "omarchy.workspaces"
         },
         {
+          "id": "joramser.camera-test"
+        },
+        {
+          "id": "io.github.ilkaydnc.omargb",
+          "off": {},
+          "themeSync": false
+        },
+        {
           "id": "moorgrove.overview"
         }
       ],
@@ -38,13 +46,19 @@
           "id": "omarchy.tray"
         },
         {
+          "id": "io.github.n1byn1kt.garmin"
+        },
+        {
+          "id": "postman.omascreentime"
+        },
+        {
           "id": "io.github.elevate08.qs-bitwarden-cli"
         },
         {
-          "id": "bibek.ytdl"
+          "id": "omarchy.lock"
         },
         {
-          "id": "omarchy-lock-style"
+          "id": "bibek.ytdl"
         },
         {
           "id": "omarchy.agents"
@@ -75,8 +89,13 @@
   },
   "plugins": [
     {
-      "id": "io.github.tallsam.navbar-cat",
-      "character": "tora"
+      "id": "bobbynicholas.omaland"
+    },
+    {
+      "id": "zen.lock"
+    },
+    {
+      "id": "derp.gifs"
     }
   ],
   "version": 1,
@@ -84,6 +103,6 @@
     "omarchy.lock"
   ],
   "cloneSourceRestores": [
-    "omarchy-lock-style"
+    "zen.lock"
   ]
 }
