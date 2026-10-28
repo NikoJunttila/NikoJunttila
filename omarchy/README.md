@@ -13,6 +13,7 @@ directly at its live location.
 | `bindings.lua` | `~/.config/hypr/bindings.lua` | Hyprland keybinding overrides |
 | `input.lua` | `~/.config/hypr/input.lua` | Keyboard layout / input overrides |
 | `kitty.conf` | `~/.config/kitty/kitty.conf` | Kitty terminal config |
+| `ghostty/` | `~/.config/ghostty` (whole dir) | Ghostty config + cursor shaders — see below |
 | `shell.json` | `~/.config/omarchy/shell.json` | Omarchy bar layout, idle settings, enabled plugins |
 
 `zsh_plugins.sh`, `secrets-setup.sh`, and `omarchy_plugins.sh` are one-shot
@@ -43,6 +44,23 @@ backed up as `<dest>.backup.<timestamp>` rather than overwritten.
 To track a new dotfile: add the file to this directory and add a
 `["repo-file"]="$HOME/absolute/dest"` entry to the `LINKS` array in
 `install.sh`.
+
+## Ghostty
+
+The whole `ghostty/` directory is symlinked (not just the config file) so the
+config's relative `custom-shader = shaders/...` path keeps resolving.
+
+- Needs **Ghostty ≥ 1.4** (`drag-handle`, `copy-on-select = both`,
+  `scrollback-limit-bytes`, `+toggle-quick-terminal`). Older versions reject the config.
+- Colors follow the active Omarchy theme via
+  `~/.local/state/omarchy/current/theme/ghostty.conf`.
+- Cursor trail shaders in `ghostty/shaders/` are from
+  [sahaj-b/cursor-shaders](https://github.com/sahaj-b/cursor-shaders) (MIT, license included).
+- Drop-down terminal is bound to `SUPER + §` in `bindings.lua`.
+- Keys: `ctrl+shift+enter` split right, `ctrl+shift+z` zoom split,
+  `ctrl+shift+p` command palette, `ctrl+shift+f` search scrollback.
+
+Check after edits: `ghostty +validate-config`, then reload with `omarchy restart terminal`.
 
 ## `omarchy_plugins.sh`
 

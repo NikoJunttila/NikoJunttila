@@ -14,6 +14,7 @@ declare -A LINKS=(
   ["bindings.lua"]="$HOME/.config/hypr/bindings.lua"
   ["input.lua"]="$HOME/.config/hypr/input.lua"
   ["kitty.conf"]="$HOME/.config/kitty/kitty.conf"
+  ["ghostty"]="$HOME/.config/ghostty"
   ["shell.json"]="$HOME/.config/omarchy/shell.json"
 )
 

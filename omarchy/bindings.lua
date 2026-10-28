@@ -76,3 +76,7 @@ o.bind("SUPER + TAB", "Workspace overview", "omarchy-shell shell toggle moorgrov
 -- the picker. Delete these two lines to get window grouping back.
 hl.unbind("SUPER + G")
 o.bind("SUPER + G", "GIF picker", "omarchy-shell shell summon derp.gifs")
+
+-- Ghostty drop-down (quick) terminal on SUPER + § (key left of 1; keycode 49 = TLDE,
+-- so it works regardless of keyboard layout). Needs Ghostty >= 1.4.
+o.bind("SUPER + code:49", "Drop-down terminal", "ghostty +toggle-quick-terminal")
